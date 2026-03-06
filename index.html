@@ -246,7 +246,7 @@
         <button onclick="showPage('tracking')"
           class="page-tab px-4 py-3 font-semibold border-b-2 border-transparent text-gray-600 hover:text-blue-600 text-sm whitespace-nowrap"
           data-page="tracking"> 📊 ติดตามสถานะ </button>
-        <button onclick="showPage('handbook')"
+        <button onclick="handleHandbookTab()"
           class="page-tab px-4 py-3 font-semibold border-b-2 border-transparent text-gray-600 hover:text-blue-600 text-sm whitespace-nowrap"
           data-page="handbook"> 📕 คู่มือค่าใช้จ่าย </button>
       </div>
@@ -2216,6 +2216,19 @@
       }
       if (page === 'tracking') {
         updateTrackingStatus();
+      }
+    }
+
+    function handleHandbookTab() {
+      // Check if the device is mobile based on userAgent or screen width
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+      if (isMobile) {
+        // Open PDF directly in a new tab for mobile users
+        window.open('Handbook.pdf', '_blank');
+      } else {
+        // Show the handbook page with iframe for desktop users
+        showPage('handbook');
       }
     }
 
