@@ -246,7 +246,7 @@
         <button onclick="showPage('tracking')"
           class="page-tab px-4 py-3 font-semibold border-b-2 border-transparent text-gray-600 hover:text-blue-600 text-sm whitespace-nowrap"
           data-page="tracking"> 📊 ติดตามสถานะ </button>
-        <button onclick="handleHandbookTab()"
+        <button onclick="showPage('handbook')"
           class="page-tab px-4 py-3 font-semibold border-b-2 border-transparent text-gray-600 hover:text-blue-600 text-sm whitespace-nowrap"
           data-page="handbook"> 📕 คู่มือค่าใช้จ่าย </button>
       </div>
@@ -711,11 +711,13 @@
 
         <div id="save-message" class="mt-4 p-3 rounded hidden text-center font-semibold"></div>
       </div>
-      <div class="text-center py-12">
+      <div class="text-center py-6">
         <p class="text-gray-500 text-lg font-bold">👨‍💻 พัฒนาโดย นางสาวพรรณลิณี แผนเมือง</p>
-        <p class="text-gray-400 text-sm">นักวิชาการเงินและบัญชี</p>
-        <p class="text-gray-400 text-sm">กลุ่มงานวิชาการ</p>
-        <p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p>
+        <p class="text-gray-400 text-sm font-bold">นักวิชาการเงินและบัญชี</p>
+        <!--p class="text-gray-400 text-sm font-bold">กลุ่มงานวิชาการ</p-->
+        <p class="text-gray-500 text-lg font-bold">👨‍💻 ผู้ร่วมทีมพัฒนา นางสาวอาลิตา เชาวนประเสริฐ</p>
+        <p class="text-gray-400 text-sm font-bold">นักจัดการงานทั่วไปปฏิบัติการ</p>
+        <!--p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p-->
       </div>
     </div>
 
@@ -1906,11 +1908,13 @@
         </form>
         <div id="approval-message" class="mt-4 p-3 rounded hidden text-center font-semibold"></div>
       </div>
-      <div class="text-center py-12">
+      <div class="text-center py-6">
         <p class="text-gray-500 text-lg font-bold">👨‍💻 พัฒนาโดย นางสาวพรรณลิณี แผนเมือง</p>
-        <p class="text-gray-400 text-sm">นักวิชาการเงินและบัญชี</p>
-        <p class="text-gray-400 text-sm">กลุ่มงานวิชาการ</p>
-        <p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p>
+        <p class="text-gray-400 text-sm font-bold">นักวิชาการเงินและบัญชี</p>
+        <!--p class="text-gray-400 text-sm font-bold">กลุ่มงานวิชาการ</p-->
+        <p class="text-gray-500 text-lg font-bold">👨‍💻 ผู้ร่วมทีมพัฒนา นางสาวอาลิตา เชาวนประเสริฐ</p>
+        <p class="text-gray-400 text-sm font-bold">นักจัดการงานทั่วไปปฏิบัติการ</p>
+        <!--p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p-->
       </div>
     </div>
 
@@ -1981,11 +1985,13 @@
             </div>
           </div>
         </div>
-        <div class="text-center py-12">
+        <div class="text-center py-6">
           <p class="text-gray-500 text-lg font-bold">👨‍💻 พัฒนาโดย นางสาวพรรณลิณี แผนเมือง</p>
-          <p class="text-gray-400 text-sm">นักวิชาการเงินและบัญชี</p>
-          <p class="text-gray-400 text-sm">กลุ่มงานวิชาการ</p>
-          <p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p>
+          <p class="text-gray-400 text-sm font-bold">นักวิชาการเงินและบัญชี</p>
+          <!--p class="text-gray-400 text-sm font-bold">กลุ่มงานวิชาการ</p-->
+          <p class="text-gray-500 text-lg font-bold">👨‍💻 ผู้ร่วมทีมพัฒนา นางสาวอาลิตา เชาวนประเสริฐ</p>
+          <p class="text-gray-400 text-sm font-bold">นักจัดการงานทั่วไปปฏิบัติการ</p>
+          <!--p class="text-gray-400 text-sm">สำนักงานคลังจังหวัดสกลนคร</p-->
         </div>
       </div>
 
@@ -1995,749 +2001,811 @@
     <div id="handbook-page" class="page-content hidden min-h-full bg-gray-100 flex overflow-hidden"
       style="height: calc(100vh - 64px);">
       <!-- Sidebar Navigation -->
+      <div class="w-72 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col shadow-lg overflow-y-auto">
+        <div class="p-6 border-b border-gray-100 bg-blue-50">
+          <h2 class="text-xl font-bold text-blue-900 flex items-center gap-2">
+            📕 สารบัญคู่มือ
+          </h2>
+          <p class="text-xs text-blue-600 mt-1">คลิกเพื่อไปยังหน้าต่างๆ ของคู่มือ</p>
+        </div>
+        <div class="p-3 space-y-1">
+          <!-- Chapter 1 -->
+          <div>
+            <button onclick="jumpToPDFPage(4)"
+              class="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 text-blue-900 font-bold transition-all flex justify-between items-center border-l-4 border-transparent hover:border-blue-600 group">
+              <span>บทที่ ๑ : บทนำ</span>
+              <span
+                class="text-xs text-blue-500 bg-blue-100 px-2 py-0.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">หน้า
+                ๔</span>
+            </button>
+            <div class="ml-4 mt-1 space-y-1 border-l border-blue-100 pl-2">
+              <button onclick="jumpToPDFPage(4)"
+                class="w-full text-left px-3 py-1.5 rounded-lg hover:bg-gray-50 text-gray-600 text-sm transition-colors hover:text-blue-600">
+                - ความสำคัญและที่มา
+              </button>
+              <button onclick="jumpToPDFPage(5)"
+                class="w-full text-left px-3 py-1.5 rounded-lg hover:bg-gray-50 text-gray-600 text-sm transition-colors hover:text-blue-600">
+                - วัตถุประสงค์
+              </button>
+            </div>
+            <div class="ml-4 mt-1 space-y-1 border-l border-blue-100 pl-2">
+              <button onclick="jumpToPDFPage(5)"
+                class="w-full text-left px-3 py-1.5 rounded-lg hover:bg-gray-50 text-gray-600 text-sm transition-colors hover:text-blue-600">
+                - ขอบเขตเนื้อหาวิชา
+              </button>
+              <button onclick="jumpToPDFPage(5)"
+                class="w-full text-left px-3 py-1.5 rounded-lg hover:bg-gray-50 text-gray-600 text-sm transition-colors hover:text-blue-600">
+                - ประโยชน์ที่จะได้รับ
+              </button>
+            </div>
+          </div>
 
+          <!-- Chapter 2 -->
+          <button onclick="jumpToPDFPage(6)"
+            class="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 text-blue-900 font-bold transition-all flex justify-between items-center border-l-4 border-transparent hover:border-blue-600 group mt-2">
+            <span>บทที่ ๒ : สาระสำคัญ กม.</span>
+            <span
+              class="text-xs text-blue-500 bg-blue-100 px-2 py-0.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">หน้า
+              ๖</span>
+          </button>
+
+          <!-- Chapter 3 -->
+          <button onclick="jumpToPDFPage(59)"
+            class="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 text-blue-900 font-bold transition-all flex justify-between items-center border-l-4 border-transparent hover:border-blue-600 group mt-2">
+            <span>บทที่ ๓ : แนวทางปฏิบัติ</span>
+            <span
+              class="text-xs text-blue-500 bg-blue-100 px-2 py-0.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">หน้า
+              ๕๙</span>
+          </button>
+
+          <!-- Chapter 4 -->
+          <button onclick="jumpToPDFPage(80)"
+            class="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 text-blue-900 font-bold transition-all flex justify-between items-center border-l-4 border-transparent hover:border-blue-600 group mt-2">
+            <span>บทที่ ๔ : บทสรุป</span>
+            <span
+              class="text-xs text-blue-500 bg-blue-100 px-2 py-0.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">หน้า
+              ๘๐</span>
+          </button>
+
+          <!-- Chapter 5 -->
+          <button onclick="jumpToPDFPage(89)"
+            class="w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 text-blue-900 font-bold transition-all flex justify-between items-center border-l-4 border-transparent hover:border-blue-600 group mt-2">
+            <span>บทที่ ๕ : ถาม - ตอบ</span>
+            <span
+              class="text-xs text-blue-500 bg-blue-100 px-2 py-0.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors">หน้า
+              ๘๙</span>
+          </button>
+        </div>
+      </div>
       <!-- PDF View Container -->
       <div class="flex-1 bg-gray-200 relative">
         <iframe id="handbook-iframe" src="Handbook.pdf#view=FitH"
           class="w-full h-full border-none shadow-inner"></iframe>
       </div>
+      </div-->
     </div>
-  </div>
 
-  <script>
-    // Staff position mapping
-    const staffPositions = {
-      'นางวรจิตร์ ปัญญาดี': 'คลังจังหวัดสกลนคร',
-      'นาย กฤติเดช อุไพพร': 'เจ้าพนักงานธุรการชำนาญงาน',
-      'นางสาว สุดารัตน์ ผุยสุ': 'เจ้าหน้าที่การคลัง',
-      'นางสาว รัฏธิดา วังศรี': 'นักวิชาการคลัง',
-      'นาง มนัสนันท์ ชาเมืองศรี': 'นักวิชาการคลังชำนาญการพิเศษ',
-      'นาง วิยะดา นาระคล': 'นักวิชาการเงินและบัญชีชำนาญการ',
-      'นางสาว สุเพ็ญศรี จันโทภาส': 'นักวิชาการคลังชำนาญการ',
-      'นาง จงกลณีย์ แสนสงคราม': 'นักวิชาการคลังชำนาญการ',
-      'นางสาว ชลธิชา ทาระขันธ์': 'นักวิชาการคลังปฏิบัติการ',
-      'นางสาวพรรณลิณี แผนเมือง': 'นักวิชาการเงินและบัญชี',
-      'นาย คมสันต์ ล่องวิเชียร': 'นักวิชาการคลังชำนาญการพิเศษ',
-      'นาง สุจิรา เพชรเกื้อ': 'นักวิชาการเงินและบัญชีชำนาญการ',
-      'นาย ณรงค์ฤทธิ์ สุนีย์': 'เจ้าพนักงานการคลังชำนาญงาน',
-      'นางสาว สิริภรณ์ ค้าโชค': 'นักวิชาการคลังปฏิบัติการ',
-      'นางสาว ยลดา ชาวไทย': 'นักวิชาการเงินและบัญชีปฏิบัติการ',
-      'นาง จิราพร ศรีพิลา': 'เจ้าหน้าที่การคลัง',
-      'นางสาว พิตติภรณ์ จิรภัทร์ชนินทร์': 'นักวิชาการเงินและบัญชีชำนาญการ',
-      'นางสาวศศิวิมล ใหมจันทร์': 'นักวิชาการคลังปฏิบัติการ',
-      'นายธนวัฒน์ อัคแก้ว': 'นักวิชาการคลังปฏิบัติการ',
-      'นางสาว อโณทัย ธนะสิทธิ์': 'นักวิชาการคลัง',
-      'นางสาว นนน อุปพงษ์': 'เจ้าหน้าที่คลัง'
-    };
+    <script>
+      // Staff position mapping
+      const staffPositions = {
+        'นางวรจิตร์ ปัญญาดี': 'คลังจังหวัดสกลนคร',
+        'นาย กฤติเดช อุไพพร': 'เจ้าพนักงานธุรการชำนาญงาน',
+        'นางสาว สุดารัตน์ ผุยสุ': 'เจ้าหน้าที่การคลัง',
+        'นางสาว รัฏธิดา วังศรี': 'นักวิชาการคลัง',
+        'นาง มนัสนันท์ ชาเมืองศรี': 'นักวิชาการคลังชำนาญการพิเศษ',
+        'นาง วิยะดา นาระคล': 'นักวิชาการเงินและบัญชีชำนาญการ',
+        'นางสาว สุเพ็ญศรี จันโทภาส': 'นักวิชาการคลังชำนาญการ',
+        'นาง จงกลณีย์ แสนสงคราม': 'นักวิชาการคลังชำนาญการ',
+        'นางสาว ชลธิชา ทาระขันธ์': 'นักวิชาการคลังปฏิบัติการ',
+        'นางสาวพรรณลิณี แผนเมือง': 'นักวิชาการเงินและบัญชี',
+        'นาย คมสันต์ ล่องวิเชียร': 'นักวิชาการคลังชำนาญการพิเศษ',
+        'นาง สุจิรา เพชรเกื้อ': 'นักวิชาการเงินและบัญชีชำนาญการ',
+        'นาย ณรงค์ฤทธิ์ สุนีย์': 'เจ้าพนักงานการคลังชำนาญงาน',
+        'นางสาว สิริภรณ์ ค้าโชค': 'นักวิชาการคลังปฏิบัติการ',
+        'นางสาว ยลดา ชาวไทย': 'นักวิชาการเงินและบัญชีปฏิบัติการ',
+        'นาง จิราพร ศรีพิลา': 'เจ้าหน้าที่การคลัง',
+        'นางสาว พิตติภรณ์ จิรภัทร์ชนินทร์': 'นักวิชาการเงินและบัญชีชำนาญการ',
+        'นางสาวศศิวิมล ใหมจันทร์': 'นักวิชาการคลังปฏิบัติการ',
+        'นายธนวัฒน์ อัคแก้ว': 'นักวิชาการคลังปฏิบัติการ',
+        'นางสาว อโณทัย ธนะสิทธิ์': 'นักวิชาการคลัง',
+        'นางสาว นนน อุปพงษ์': 'เจ้าหน้าที่คลัง'
+      };
 
-    let allRecords = [];
-    let trackingHistory = [];
-    let approvalData = null;
+      let allRecords = [];
+      let trackingHistory = [];
+      let approvalData = null;
 
-    // ฟังก์ชัน localStorage สำหรับบันทึกข้อมูล
-    function saveToLocalStorage() {
-      try {
-        localStorage.setItem('allRecords', JSON.stringify(allRecords));
-        localStorage.setItem('approvalData', JSON.stringify(approvalData));
-        localStorage.setItem('trackingHistory', JSON.stringify(trackingHistory));
-      } catch (e) {
-        console.error('Error saving to localStorage:', e);
-      }
-    }
-
-    // ฟังก์ชันโหลดข้อมูลจาก localStorage
-    function loadFromLocalStorage() {
-      try {
-        const savedRecords = localStorage.getItem('allRecords');
-        const savedApproval = localStorage.getItem('approvalData');
-        const savedHistory = localStorage.getItem('trackingHistory');
-
-        if (savedRecords) {
-          allRecords = JSON.parse(savedRecords);
+      // ฟังก์ชัน localStorage สำหรับบันทึกข้อมูล
+      function saveToLocalStorage() {
+        try {
+          localStorage.setItem('allRecords', JSON.stringify(allRecords));
+          localStorage.setItem('approvalData', JSON.stringify(approvalData));
+          localStorage.setItem('trackingHistory', JSON.stringify(trackingHistory));
+        } catch (e) {
+          console.error('Error saving to localStorage:', e);
         }
-        if (savedApproval) {
-          approvalData = JSON.parse(savedApproval);
+      }
+
+      // ฟังก์ชันโหลดข้อมูลจาก localStorage
+      function loadFromLocalStorage() {
+        try {
+          const savedRecords = localStorage.getItem('allRecords');
+          const savedApproval = localStorage.getItem('approvalData');
+          const savedHistory = localStorage.getItem('trackingHistory');
+
+          if (savedRecords) {
+            allRecords = JSON.parse(savedRecords);
+          }
+          if (savedApproval) {
+            approvalData = JSON.parse(savedApproval);
+          }
+          if (savedHistory) {
+            trackingHistory = JSON.parse(savedHistory);
+          }
+        } catch (e) {
+          console.error('Error loading from localStorage:', e);
         }
-        if (savedHistory) {
-          trackingHistory = JSON.parse(savedHistory);
+      }
+
+      // ฟังก์ชันลบข้อมูลทั้งหมด
+      function clearAllData() {
+        try {
+          localStorage.removeItem('allRecords');
+          localStorage.removeItem('approvalData');
+          localStorage.removeItem('trackingHistory');
+          allRecords = [];
+          approvalData = null;
+          trackingHistory = [];
+        } catch (e) {
+          console.error('Error clearing localStorage:', e);
         }
-      } catch (e) {
-        console.error('Error loading from localStorage:', e);
-      }
-    }
-
-    // ฟังก์ชันลบข้อมูลทั้งหมด
-    function clearAllData() {
-      try {
-        localStorage.removeItem('allRecords');
-        localStorage.removeItem('approvalData');
-        localStorage.removeItem('trackingHistory');
-        allRecords = [];
-        approvalData = null;
-        trackingHistory = [];
-      } catch (e) {
-        console.error('Error clearing localStorage:', e);
-      }
-    }
-
-    // ฟังก์ชันสำหรับดาวน์โหลด CSV
-    function downloadHistoryCSV() {
-      if (allRecords.length === 0) {
-        alert('ไม่มีข้อมูลสำหรับดาวน์โหลด');
-        return;
       }
 
-      // เตรียมหัวข้อ CSV
-      const headers = [
-        'เลขที่สัญญา', 'วันที่สัญญา', 'ชื่อผู้ยืม', 'จำนวนเงินยืม',
-        'ชื่อผู้ขอเบิก', 'ตำแหน่ง', 'สำนัก/กอง', 'วัตถุประสงค์',
-        'วันเริ่มเดินทาง', 'วันสิ้นสุด', 'รวมจำนวนวัน', 'รวมจำนวนชั่วโมง',
-        'รวมเงินทั้งสิ้น', 'สถานะการอนุมัติ', 'ผู้อนุมัติ', 'วันที่อนุมัติ'
-      ];
+      // ฟังก์ชันสำหรับดาวน์โหลด CSV
+      function downloadHistoryCSV() {
+        if (allRecords.length === 0) {
+          alert('ไม่มีข้อมูลสำหรับดาวน์โหลด');
+          return;
+        }
 
-      // เตรียมข้อมูล
-      const rows = allRecords.map(record => {
-        const status = approvalData ? (approvalData.decision === 'approved' ? 'อนุมัติแล้ว' : approvalData.decision === 'rejected' ? 'ไม่อนุมัติ' : 'รอการแก้ไข') : 'รอการอนุมัติ';
-        return [
-          record.loanNumber || '-',
-          record.loanDate || '-',
-          record.borrowerName || '-',
-          record.borrowerAmount || '0',
-          record.fullName || '-',
-          record.position || '-',
-          record.office || '-',
-          record.travelPurpose || '-',
-          `${record.startDate}/${record.startMonth}/${record.startYear}`,
-          `${record.endDate}/${record.endMonth}/${record.endYear}`,
-          record.totalDays || '0',
-          record.totalHours || '0',
-          record.grandTotal || '0',
-          status,
-          approvalData ? approvalData.approverName : '-',
-          approvalData ? approvalData.timestamp : '-'
+        // เตรียมหัวข้อ CSV
+        const headers = [
+          'เลขที่สัญญา', 'วันที่สัญญา', 'ชื่อผู้ยืม', 'จำนวนเงินยืม',
+          'ชื่อผู้ขอเบิก', 'ตำแหน่ง', 'สำนัก/กอง', 'วัตถุประสงค์',
+          'วันเริ่มเดินทาง', 'วันสิ้นสุด', 'รวมจำนวนวัน', 'รวมจำนวนชั่วโมง',
+          'รวมเงินทั้งสิ้น', 'สถานะการอนุมัติ', 'ผู้อนุมัติ', 'วันที่อนุมัติ'
         ];
-      });
 
-      // สร้างเนื้อหา CSV
-      let csvContent = "\uFEFF"; // เพิ่ม BOM สำหรับภาษาไทยใน Excel
-      csvContent += headers.join(",") + "\n";
-      rows.forEach(row => {
-        const escapedRow = row.map(val => `"${val.toString().replace(/"/g, '""')}"`);
-        csvContent += escapedRow.join(",") + "\n";
-      });
+        // เตรียมข้อมูล
+        const rows = allRecords.map(record => {
+          const status = approvalData ? (approvalData.decision === 'approved' ? 'อนุมัติแล้ว' : approvalData.decision === 'rejected' ? 'ไม่อนุมัติ' : 'รอการแก้ไข') : 'รอการอนุมัติ';
+          return [
+            record.loanNumber || '-',
+            record.loanDate || '-',
+            record.borrowerName || '-',
+            record.borrowerAmount || '0',
+            record.fullName || '-',
+            record.position || '-',
+            record.office || '-',
+            record.travelPurpose || '-',
+            `${record.startDate}/${record.startMonth}/${record.startYear}`,
+            `${record.endDate}/${record.endMonth}/${record.endYear}`,
+            record.totalDays || '0',
+            record.totalHours || '0',
+            record.grandTotal || '0',
+            status,
+            approvalData ? approvalData.approverName : '-',
+            approvalData ? approvalData.timestamp : '-'
+          ];
+        });
 
-      // สร้างไฟล์สำหรับดาวน์โหลด
-      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.setAttribute("href", url);
-      link.setAttribute("download", `travel_history_${new Date().getTime()}.csv`);
-      link.style.visibility = 'hidden';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+        // สร้างเนื้อหา CSV
+        let csvContent = "\uFEFF"; // เพิ่ม BOM สำหรับภาษาไทยใน Excel
+        csvContent += headers.join(",") + "\n";
+        rows.forEach(row => {
+          const escapedRow = row.map(val => `"${val.toString().replace(/"/g, '""')}"`);
+          csvContent += escapedRow.join(",") + "\n";
+        });
 
-    const defaultConfig = {
-      document_title: 'ใบเบิกค่าใช้จ่ายในการเดินทางไปราชการ'
-    };
+        // สร้างไฟล์สำหรับดาวน์โหลด
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `travel_history_${new Date().getTime()}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
 
-    function updatePosition() {
-      const name = document.getElementById('fullName').value;
-      const position = staffPositions[name] || '';
-      document.getElementById('position').value = position;
-      updateDocumentFromData(getFormData());
-    }
+      const defaultConfig = {
+        document_title: 'ใบเบิกค่าใช้จ่ายในการเดินทางไปราชการ'
+      };
 
-    function updateSignaturePosition() {
-      const name = document.getElementById('signatureName').value;
-      const position = staffPositions[name] || '';
-      document.getElementById('signaturePosition').value = position;
-    }
+      function updatePosition() {
+        const name = document.getElementById('fullName').value;
+        const position = staffPositions[name] || '';
+        document.getElementById('position').value = position;
+        updateDocumentFromData(getFormData());
+      }
 
-    function updateApproverPosition() {
-      const name = document.getElementById('approverName').value;
-      const position = staffPositions[name] || '';
-      document.getElementById('approverPosition').value = position;
-      syncApprovalToDocument2();
-    }
+      function updateSignaturePosition() {
+        const name = document.getElementById('signatureName').value;
+        const position = staffPositions[name] || '';
+        document.getElementById('signaturePosition').value = position;
+      }
 
-    function updateVerifierPosition() {
-      const name = document.getElementById('verifierName').value;
-      const position = staffPositions[name] || '';
-      document.getElementById('verifierPosition').value = position;
-      syncApprovalToDocument2();
-    }
+      function updateApproverPosition() {
+        const name = document.getElementById('approverName').value;
+        const position = staffPositions[name] || '';
+        document.getElementById('approverPosition').value = position;
+        syncApprovalToDocument2();
+      }
 
-    function updateDecisionMakerPosition() {
-      const name = document.getElementById('decisionMakerName').value;
-      const position = staffPositions[name] || '';
-      document.getElementById('decisionMakerPosition').value = position;
-      syncApprovalToDocument2();
-    }
+      function updateVerifierPosition() {
+        const name = document.getElementById('verifierName').value;
+        const position = staffPositions[name] || '';
+        document.getElementById('verifierPosition').value = position;
+        syncApprovalToDocument2();
+      }
 
-    function initializeDateSelectors() {
-      const daySelects = document.querySelectorAll('select[id$="Date"]');
-      daySelects.forEach(select => {
-        for (let i = 1; i <= 31; i++) {
-          const option = document.createElement('option');
-          option.value = i;
-          option.textContent = i;
-          select.appendChild(option);
+      function updateDecisionMakerPosition() {
+        const name = document.getElementById('decisionMakerName').value;
+        const position = staffPositions[name] || '';
+        document.getElementById('decisionMakerPosition').value = position;
+        syncApprovalToDocument2();
+      }
+
+      function initializeDateSelectors() {
+        const daySelects = document.querySelectorAll('select[id$="Date"]');
+        daySelects.forEach(select => {
+          for (let i = 1; i <= 31; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            select.appendChild(option);
+          }
+        });
+
+        const yearSelects = document.querySelectorAll('select[id$="Year"]');
+        const currentYear = new Date().getFullYear() + 543;
+        yearSelects.forEach(select => {
+          for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            select.appendChild(option);
+          }
+        });
+      }
+
+      function showPage(page) {
+        document.querySelectorAll('.page-content').forEach(el => el.classList.add('hidden'));
+        document.getElementById(page + '-page').classList.remove('hidden');
+        document.querySelectorAll('.page-tab').forEach(el => {
+          if (el.dataset.page === page) {
+            el.classList.add('border-blue-600', 'text-blue-600');
+            el.classList.remove('border-transparent', 'text-gray-600');
+          } else {
+            el.classList.remove('border-blue-600', 'text-blue-600');
+            el.classList.add('border-transparent', 'text-gray-600');
+          }
+        });
+        if (page === 'approval') {
+          loadApprovalForm();
         }
-      });
-
-      const yearSelects = document.querySelectorAll('select[id$="Year"]');
-      const currentYear = new Date().getFullYear() + 543;
-      yearSelects.forEach(select => {
-        for (let i = currentYear - 5; i <= currentYear + 5; i++) {
-          const option = document.createElement('option');
-          option.value = i;
-          option.textContent = i;
-          select.appendChild(option);
-        }
-      });
-    }
-
-    function showPage(page) {
-      document.querySelectorAll('.page-content').forEach(el => el.classList.add('hidden'));
-      document.getElementById(page + '-page').classList.remove('hidden');
-      document.querySelectorAll('.page-tab').forEach(el => {
-        if (el.dataset.page === page) {
-          el.classList.add('border-blue-600', 'text-blue-600');
-          el.classList.remove('border-transparent', 'text-gray-600');
-        } else {
-          el.classList.remove('border-blue-600', 'text-blue-600');
-          el.classList.add('border-transparent', 'text-gray-600');
-        }
-      });
-      if (page === 'approval') {
-        loadApprovalForm();
-      }
-      if (page === 'tracking') {
-        updateTrackingStatus();
-      }
-    }
-
-    function handleHandbookTab() {
-      // Check if the device is mobile based on userAgent or screen width
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-
-      if (isMobile) {
-        // Open PDF directly in a new tab for mobile users
-        window.open('Handbook.pdf', '_blank');
-      } else {
-        // Show the handbook page with iframe for desktop users
-        showPage('handbook');
-      }
-    }
-
-    function jumpToPDFPage(page) {
-      const iframe = document.getElementById('handbook-iframe');
-      if (iframe) {
-        const newUrl = `Handbook.pdf#page=${page}&view=FitH`;
-        // ใช้การสร้าง iframe ใหม่เพื่อแก้ปัญหา Browser บางตัวไม่ยอมกระโดดหน้าเมื่อเปลี่ยนแค่ Hash
-        const parent = iframe.parentNode;
-        const newIframe = document.createElement('iframe');
-        newIframe.id = 'handbook-iframe';
-        newIframe.src = newUrl;
-        newIframe.className = 'w-full h-full border-none shadow-inner';
-
-        parent.replaceChild(newIframe, iframe);
-      }
-    }
-
-    function printDocument(pageId, orientation = 'portrait') {
-      // 1. สร้างแท็ก style ชั่วคราวเพื่อบอกเครื่องปริ้นท์ว่าเอา แนวตั้ง หรือ แนวนอน
-      const style = document.createElement('style');
-      style.innerHTML = `@page { size: A4 ${orientation}; margin: 0; }`;
-      document.head.appendChild(style);
-
-      // 2. สั่งพิมพ์ (เหมือนกด Ctrl+P)
-      window.print();
-
-      // 3. พิมพ์เสร็จก็ลบการตั้งค่าทิ้ง เพื่อไม่ให้กระทบหน้าอื่น
-      style.remove();
-    }
-
-    function calculateTravelTime() {
-      const startDateInput = document.getElementById('startDate').value;
-      const startMonthInput = document.getElementById('startMonth').value;
-      const startYearInput = document.getElementById('startYear').value;
-      const startTimeInput = document.getElementById('startTime').value;
-      const endDateInput = document.getElementById('endDate').value;
-      const endMonthInput = document.getElementById('endMonth').value;
-      const endYearInput = document.getElementById('endYear').value;
-      const endTimeInput = document.getElementById('endTime').value;
-
-      if (startDateInput && startYearInput && endDateInput && endYearInput) {
-        const monthMap = {
-          'มกราคม': 1, 'กุมภาพันธ์': 2, 'มีนาคม': 3, 'เมษายน': 4,
-          'พฤษภาคม': 5, 'มิถุนายน': 6, 'กรกฎาคม': 7, 'สิงหาคม': 8,
-          'กันยายน': 9, 'ตุลาคม': 10, 'พฤศจิกายน': 11, 'ธันวาคม': 12
-        };
-
-        const startMonth = monthMap[startMonthInput] || 1;
-        const endMonth = monthMap[endMonthInput] || 1;
-
-        const startYear = parseInt(startYearInput) - 543;
-        const endYear = parseInt(endYearInput) - 543;
-
-        const startDate = new Date(startYear, startMonth - 1, parseInt(startDateInput), parseInt(startTimeInput) || 0, 0, 0);
-        const endDate = new Date(endYear, endMonth - 1, parseInt(endDateInput), parseInt(endTimeInput) || 0, 0, 0);
-
-        if (startDate && endDate && endDate >= startDate) {
-          const timeDifference = endDate - startDate;
-          const totalHours = Math.floor(timeDifference / (1000 * 60 * 60));
-          const totalDays = Math.floor(totalHours / 24);
-          const remainingHours = totalHours % 24;
-
-          document.getElementById('totalDays').value = totalDays;
-          document.getElementById('totalHours').value = remainingHours;
+        if (page === 'tracking') {
+          updateTrackingStatus();
         }
       }
-    }
 
-    // ฟังก์ชันแปลงตัวเลขเป็นตัวหนังสือภาษาไทย (รองรับทศนิยม/สตางค์)
-    function ThaiNumberToText(amount) {
-      if (isNaN(amount) || amount === 0) return "ศูนย์บาทถ้วน";
+      function jumpToPDFPage(page) {
+        const iframe = document.getElementById('handbook-iframe');
+        if (iframe) {
+          const newUrl = `Handbook.pdf#page=${page}&view=FitH`;
+          // ใช้การสร้าง iframe ใหม่เพื่อแก้ปัญหา Browser บางตัวไม่ยอมกระโดดหน้าเมื่อเปลี่ยนแค่ Hash
+          const parent = iframe.parentNode;
+          const newIframe = document.createElement('iframe');
+          newIframe.id = 'handbook-iframe';
+          newIframe.src = newUrl;
+          newIframe.className = 'w-full h-full border-none shadow-inner';
 
-      let numberString = Math.abs(amount).toFixed(2).toString();
-      let parts = numberString.split('.');
-      let baht = parts[0];
-      let satang = parts[1];
+          parent.replaceChild(newIframe, iframe);
+        }
+      }
 
-      const readNumber = (numStr) => {
-        const numbers = ['ศูนย์', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า'];
-        const positions = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน'];
-        let text = '';
-        let length = numStr.length;
+      function printDocument(pageId, orientation = 'portrait') {
+        // 1. สร้างแท็ก style ชั่วคราวเพื่อบอกเครื่องปริ้นท์ว่าเอา แนวตั้ง หรือ แนวนอน
+        const style = document.createElement('style');
+        style.innerHTML = `@page { size: A4 ${orientation}; margin: 0; }`;
+        document.head.appendChild(style);
 
-        for (let i = 0; i < length; i++) {
-          let digit = parseInt(numStr.charAt(i));
-          let position = length - i - 1;
+        // 2. สั่งพิมพ์ (เหมือนกด Ctrl+P)
+        window.print();
 
-          if (digit !== 0) {
-            if (position === 1 && digit === 1) {
-              text += positions[position];
-            } else if (position === 1 && digit === 2) {
-              text += 'ยี่' + positions[position];
-            } else if (position === 0 && digit === 1 && length > 1 && parseInt(numStr.charAt(i - 1)) !== 0) {
-              text += 'เอ็ด';
-            } else {
-              text += numbers[digit] + (position > 0 && position % 6 === 0 ? '' : positions[position % 6]);
+        // 3. พิมพ์เสร็จก็ลบการตั้งค่าทิ้ง เพื่อไม่ให้กระทบหน้าอื่น
+        style.remove();
+      }
+
+      function calculateTravelTime() {
+        const startDateInput = document.getElementById('startDate').value;
+        const startMonthInput = document.getElementById('startMonth').value;
+        const startYearInput = document.getElementById('startYear').value;
+        const startTimeInput = document.getElementById('startTime').value;
+        const endDateInput = document.getElementById('endDate').value;
+        const endMonthInput = document.getElementById('endMonth').value;
+        const endYearInput = document.getElementById('endYear').value;
+        const endTimeInput = document.getElementById('endTime').value;
+
+        if (startDateInput && startYearInput && endDateInput && endYearInput) {
+          const monthMap = {
+            'มกราคม': 1, 'กุมภาพันธ์': 2, 'มีนาคม': 3, 'เมษายน': 4,
+            'พฤษภาคม': 5, 'มิถุนายน': 6, 'กรกฎาคม': 7, 'สิงหาคม': 8,
+            'กันยายน': 9, 'ตุลาคม': 10, 'พฤศจิกายน': 11, 'ธันวาคม': 12
+          };
+
+          const startMonth = monthMap[startMonthInput] || 1;
+          const endMonth = monthMap[endMonthInput] || 1;
+
+          const startYear = parseInt(startYearInput) - 543;
+          const endYear = parseInt(endYearInput) - 543;
+
+          const startDate = new Date(startYear, startMonth - 1, parseInt(startDateInput), parseInt(startTimeInput) || 0, 0, 0);
+          const endDate = new Date(endYear, endMonth - 1, parseInt(endDateInput), parseInt(endTimeInput) || 0, 0, 0);
+
+          if (startDate && endDate && endDate >= startDate) {
+            const timeDifference = endDate - startDate;
+            const totalHours = Math.floor(timeDifference / (1000 * 60 * 60));
+            const totalDays = Math.floor(totalHours / 24);
+            const remainingHours = totalHours % 24;
+
+            document.getElementById('totalDays').value = totalDays;
+            document.getElementById('totalHours').value = remainingHours;
+          }
+        }
+      }
+
+      // ฟังก์ชันแปลงตัวเลขเป็นตัวหนังสือภาษาไทย (รองรับทศนิยม/สตางค์)
+      function ThaiNumberToText(amount) {
+        if (isNaN(amount) || amount === 0) return "ศูนย์บาทถ้วน";
+
+        let numberString = Math.abs(amount).toFixed(2).toString();
+        let parts = numberString.split('.');
+        let baht = parts[0];
+        let satang = parts[1];
+
+        const readNumber = (numStr) => {
+          const numbers = ['ศูนย์', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า'];
+          const positions = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน'];
+          let text = '';
+          let length = numStr.length;
+
+          for (let i = 0; i < length; i++) {
+            let digit = parseInt(numStr.charAt(i));
+            let position = length - i - 1;
+
+            if (digit !== 0) {
+              if (position === 1 && digit === 1) {
+                text += positions[position];
+              } else if (position === 1 && digit === 2) {
+                text += 'ยี่' + positions[position];
+              } else if (position === 0 && digit === 1 && length > 1 && parseInt(numStr.charAt(i - 1)) !== 0) {
+                text += 'เอ็ด';
+              } else {
+                text += numbers[digit] + (position > 0 && position % 6 === 0 ? '' : positions[position % 6]);
+              }
+            }
+            // ใส่คำว่า "ล้าน" เมื่อถึงหลักล้าน
+            if (position > 0 && position % 6 === 0) {
+              text += 'ล้าน';
             }
           }
-          // ใส่คำว่า "ล้าน" เมื่อถึงหลักล้าน
-          if (position > 0 && position % 6 === 0) {
-            text += 'ล้าน';
-          }
+          return text;
+        };
+
+        let result = '';
+        if (parseInt(baht) > 0) {
+          result += readNumber(baht) + 'บาท';
         }
-        return text;
-      };
 
-      let result = '';
-      if (parseInt(baht) > 0) {
-        result += readNumber(baht) + 'บาท';
-      }
-
-      if (parseInt(satang) > 0) {
-        result += readNumber(satang) + 'สตางค์';
-      } else {
-        result += 'ถ้วน';
-      }
-
-      return result;
-    }
-
-    // อัปเดตฟังก์ชันคำนวณเงินให้เรียกใช้ฟังก์ชันภาษาไทยอัตโนมัติ
-    function calculateGrandTotal() {
-      const mealTotal = parseFloat(document.getElementById('mealTotal').value) || 0;
-      const lodgingTotal = parseFloat(document.getElementById('lodgingTotal').value) || 0;
-      const transportTotal = parseFloat(document.getElementById('transportTotal').value) || 0;
-      const otherTotal = parseFloat(document.getElementById('otherTotal').value) || 0;
-      const grandTotal = mealTotal + lodgingTotal + transportTotal + otherTotal;
-
-      // ใส่ตัวเลข
-      document.getElementById('grandTotal').value = grandTotal;
-      document.getElementById('doc-grandTotal').textContent = grandTotal || '-';
-
-      // ใส่ตัวหนังสือภาษาไทย
-      if (grandTotal > 0) {
-        const thaiText = ThaiNumberToText(grandTotal);
-        document.getElementById('grandTotalWords').value = thaiText;
-        document.getElementById('doc-grandTotalWords').textContent = thaiText;
-
-        // อัปเดตในเอกสารส่วนที่ 2 ด้วย
-        const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
-        if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = thaiText;
-      } else {
-        document.getElementById('grandTotalWords').value = '';
-        document.getElementById('doc-grandTotalWords').textContent = '-';
-
-        const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
-        if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = '-';
-      }
-    }
-    // ฟังก์ชันคำนวณ: ช่อง 1 (อัตรา) x ช่อง 2 (จำนวนวัน) = ช่อง 3 (รวมเงิน)
-    function calculateRowTotals() {
-      // 1. เบี้ยเลี้ยง
-      const mealRate = parseFloat(document.getElementById('mealAllowance').value) || 0;
-      const mealDays = parseFloat(document.getElementById('mealDays').value) || 0;
-      const mealTotal = mealRate * mealDays;
-      document.getElementById('mealTotal').value = mealTotal > 0 ? mealTotal : '';
-
-      // 2. ที่พัก
-      const lodgingRate = parseFloat(document.getElementById('lodgingType').value) || 0;
-      const lodgingDays = parseFloat(document.getElementById('lodgingDays').value) || 0;
-      const lodgingTotal = lodgingRate * lodgingDays;
-      document.getElementById('lodgingTotal').value = lodgingTotal > 0 ? lodgingTotal : '';
-
-      // เรียกฟังก์ชันรวมเงินทั้งสิ้นอัตโนมัติ
-      calculateGrandTotal();
-    }
-
-    // ----------------------------------------------------
-    // ลบคำสั่งดักจับเหตุการณ์ (Event Listeners) ตัวเก่าที่คอยจับ input ช่องต่างๆ ทิ้ง
-    // และใช้โค้ดชุดใหม่นี้แทนครับ:
-    // ----------------------------------------------------
-
-    // ดักจับช่อง เบี้ยเลี้ยง และ ที่พัก (ให้คูณกันอัตโนมัติ)
-    const calcInputs = ['mealAllowance', 'mealDays', 'lodgingType', 'lodgingDays'];
-    calcInputs.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('input', calculateRowTotals);
-      }
-    });
-
-    // ดักจับช่อง ค่าพาหนะ และ ค่าใช้จ่ายอื่นๆ (ช่องรวมเงินกรอกเอง)
-    ['transportTotal', 'otherTotal'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('input', calculateGrandTotal);
-      }
-    });
-
-    function buildDateString_TH(day, month, year) {
-      if (!day || !month || !year) return '';
-      return `${day} ${month} ${year}`;
-    }
-
-    function getFormData() {
-      const startType = document.querySelector('input[name="startType"]:checked')?.value || '';
-      const endType = document.querySelector('input[name="endType"]:checked')?.value || '';
-
-      return {
-        id: new Date().getTime().toString(),
-        loanNumber: document.getElementById('loanNumber').value,
-        loanDate: document.getElementById('loanDate').value,
-        loanMonth: document.getElementById('loanMonth').value,
-        loanYear: document.getElementById('loanYear').value,
-        borrowerName: document.getElementById('borrowerName').value,
-        borrowerAmount: document.getElementById('borrowerAmount').value,
-        office: document.getElementById('office').value,
-        formDate: document.getElementById('formDate').value,
-        formMonth: document.getElementById('formMonth').value,
-        formYear: document.getElementById('formYear').value,
-        commandNumber: document.getElementById('commandNumber').value,
-        commandDate: document.getElementById('commandDate').value,
-        commandMonth: document.getElementById('commandMonth').value,
-        commandYear: document.getElementById('commandYear').value,
-        fullName: document.getElementById('fullName').value,
-        position: document.getElementById('position').value,
-        department: document.getElementById('department').value,
-        companions: document.getElementById('companions').value,
-        travelPurpose: document.getElementById('travelPurpose').value,
-        startDepartureType: startType,
-        startDate: document.getElementById('startDate').value,
-        startMonth: document.getElementById('startMonth').value,
-        startYear: document.getElementById('startYear').value,
-        startTime: document.getElementById('startTime').value,
-        endDepartureType: endType,
-        endDate: document.getElementById('endDate').value,
-        endMonth: document.getElementById('endMonth').value,
-        endYear: document.getElementById('endYear').value,
-        endTime: document.getElementById('endTime').value,
-        totalDays: document.getElementById('totalDays').value,
-        totalHours: document.getElementById('totalHours').value,
-        mealAllowance: document.getElementById('mealAllowance').value,
-        mealDays: document.getElementById('mealDays').value,
-        mealTotal: document.getElementById('mealTotal').value,
-        lodgingType: document.getElementById('lodgingType').value,
-        lodgingDays: document.getElementById('lodgingDays').value,
-        lodgingTotal: document.getElementById('lodgingTotal').value,
-        transport: document.getElementById('transport').value,
-        transportTotal: document.getElementById('transportTotal').value,
-        otherExpense: document.getElementById('otherExpense').value,
-        otherTotal: document.getElementById('otherTotal').value,
-        grandTotal: document.getElementById('grandTotal').value,
-        grandTotalWords: document.getElementById('grandTotalWords').value,
-        evidenceCount: document.getElementById('evidenceCount').value,
-        signatureName: document.getElementById('signatureName').value,
-        signaturePosition: document.getElementById('signaturePosition').value
-      };
-    }
-
-    // 2. ฟังก์ชันอัปเดตเอกสาร (ที่หุ้มด้วย toThaiNumerals แล้วทั้งหมด)
-    // 2. ฟังก์ชันอัปเดตเอกสาร (ที่หุ้มด้วย toThaiNumerals แล้วทั้งหมด)
-    function updateDocumentFromData(data) {
-      // อัปเดตเอกสารส่วนที่ 1
-      document.getElementById('doc-loanNumber').textContent = toThaiNumerals(data.loanNumber) || '-';
-      // วันที่สัญญาเงินยืมและคำสั่ง
-      document.getElementById('doc-loanDate').textContent = toThaiNumerals(buildDateString_TH(data.loanDate, data.loanMonth, data.loanYear)) || '-';
-      document.getElementById('doc-commandDate').textContent = toThaiNumerals(buildDateString_TH(data.commandDate, data.commandMonth, data.commandYear)) || '-';
-
-      // วันที่ที่ทำการ (มุมขวาบน)
-      document.getElementById('doc-formDate_day').textContent = toThaiNumerals(data.formDate) || '-';
-      document.getElementById('doc-formDate_month').textContent = data.formMonth || '-'; // เดือนเป็นข้อความอยู่แล้ว ไม่ต้องแปลง
-      document.getElementById('doc-formDate_year').textContent = toThaiNumerals(data.formYear) || '-';
-
-      document.getElementById('doc-borrowerName').textContent = toThaiNumerals(data.borrowerName) || '-';
-      document.getElementById('doc-borrowerAmount').textContent = toThaiNumerals(data.borrowerAmount) || '-';
-      document.getElementById('doc-office').textContent = toThaiNumerals(data.office) || '-';
-      document.getElementById('doc-commandNumber').textContent = toThaiNumerals(data.commandNumber) || '-';
-      document.getElementById('doc-fullName').textContent = toThaiNumerals(data.fullName) || '-';
-      document.getElementById('doc-position').textContent = toThaiNumerals(data.position) || '-';
-      document.getElementById('doc-department').textContent = toThaiNumerals(data.department) || '-';
-      document.getElementById('doc-companions').textContent = toThaiNumerals(data.companions) || '-';
-      document.getElementById('doc-travelPurpose').textContent = toThaiNumerals(data.travelPurpose) || '-';
-
-      // อัปเดตวงกลมเลือก ออกเดินทาง/กลับถึง
-      document.getElementById('doc-start-home').textContent = data.startDepartureType === 'บ้านพัก' ? '◉' : '◯';
-      document.getElementById('doc-start-office').textContent = data.startDepartureType === 'สำนักงาน' ? '◉' : '◯';
-      document.getElementById('doc-end-home').textContent = data.endDepartureType === 'บ้านพัก' ? '◉' : '◯';
-      document.getElementById('doc-end-office').textContent = data.endDepartureType === 'สำนักงาน' ? '◉' : '◯';
-
-      document.getElementById('doc-startDate').textContent = toThaiNumerals(data.startDate) || '-';
-      document.getElementById('doc-startMonth').textContent = data.startMonth || '-';
-      document.getElementById('doc-startYear').textContent = toThaiNumerals(data.startYear) || '-';
-      document.getElementById('doc-startTime').textContent = toThaiNumerals(data.startTime) || '-';
-      document.getElementById('doc-endDate').textContent = toThaiNumerals(data.endDate) || '-';
-      document.getElementById('doc-endMonth').textContent = data.endMonth || '-';
-      document.getElementById('doc-endYear').textContent = toThaiNumerals(data.endYear) || '-';
-      document.getElementById('doc-endTime').textContent = toThaiNumerals(data.endTime) || '-';
-
-      document.getElementById('doc-totalDays').textContent = toThaiNumerals(data.totalDays) || '-';
-      document.getElementById('doc-totalHours').textContent = toThaiNumerals(data.totalHours) || '-';
-
-      document.getElementById('doc-mealAllowance').textContent = toThaiNumerals(data.mealAllowance) || '-';
-      document.getElementById('doc-mealDays').textContent = toThaiNumerals(data.mealDays) || '-';
-      document.getElementById('doc-mealTotal').textContent = toThaiNumerals(data.mealTotal) || '-';
-
-      document.getElementById('doc-lodgingType').textContent = toThaiNumerals(data.lodgingType) || '-';
-      document.getElementById('doc-lodgingDays').textContent = toThaiNumerals(data.lodgingDays) || '-';
-      document.getElementById('doc-lodgingTotal').textContent = toThaiNumerals(data.lodgingTotal) || '-';
-
-      document.getElementById('doc-transport').textContent = toThaiNumerals(data.transport) || '-';
-      document.getElementById('doc-transportTotal').textContent = toThaiNumerals(data.transportTotal) || '-';
-
-      document.getElementById('doc-otherExpense').textContent = toThaiNumerals(data.otherExpense) || '-';
-      document.getElementById('doc-otherTotal').textContent = toThaiNumerals(data.otherTotal) || '-';
-
-      document.getElementById('doc-grandTotal').textContent = toThaiNumerals(data.grandTotal) || '-';
-      document.getElementById('doc-grandTotalWords').textContent = data.grandTotalWords || '-'; // ยอดเงินภาษาไทย ไม่ต้องแปลง
-      document.getElementById('doc-evidenceCount').textContent = toThaiNumerals(data.evidenceCount) || '-';
-
-      document.getElementById('doc-signatureName').textContent = toThaiNumerals(data.signatureName) || '-';
-      document.getElementById('doc-signaturePosition').textContent = toThaiNumerals(data.signaturePosition) || '-';
-
-      // Sync ไปที่ Document 2 (ส่วนที่ 2)
-      const doc2LoanNum = document.querySelector('#document2-page .doc2-loanNumber');
-      const doc2LoanDate = document.querySelector('#document2-page .doc2-loanDate');
-      const doc2GrandTotal = document.querySelector('#document2-page .doc2-grandTotal');
-      const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
-      const doc2PayeeName = document.querySelector('#document2-page .payee-receiver-name');
-      const doc2PayeePos = document.querySelector('#document2-page .payee-receiver-pos');
-      const doc2PayeeDate = document.querySelector('#document2-page .payee-receiver-date');
-
-      if (doc2LoanNum) doc2LoanNum.textContent = toThaiNumerals(data.loanNumber) || '-';
-      if (doc2LoanDate) doc2LoanDate.textContent = toThaiNumerals(buildDateString_TH(data.loanDate, data.loanMonth, data.loanYear)) || '-';
-      if (doc2GrandTotal) doc2GrandTotal.textContent = toThaiNumerals(data.grandTotal) || '-';
-      if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = data.grandTotalWords || '-';
-      if (doc2PayeeName) doc2PayeeName.textContent = toThaiNumerals(data.fullName) || '-';
-      if (doc2PayeePos) doc2PayeePos.textContent = toThaiNumerals(data.position) || '-';
-      if (doc2PayeeDate) doc2PayeeDate.textContent = toThaiNumerals(buildDateString_TH(data.formDate, data.formMonth, data.formYear)) || '-';
-
-      // Sync ไปที่ Document 3 (ส่วนที่ 3 แนวนอน)
-      document.querySelectorAll('.doc3-fullName').forEach(el => el.textContent = toThaiNumerals(data.fullName) || '-');
-      document.querySelectorAll('.doc3-position').forEach(el => el.textContent = toThaiNumerals(data.position) || '-');
-      document.querySelectorAll('.doc3-meal').forEach(el => el.textContent = toThaiNumerals(data.mealTotal) || '-');
-      document.querySelectorAll('.doc3-lodging').forEach(el => el.textContent = toThaiNumerals(data.lodgingTotal) || '-');
-      document.querySelectorAll('.doc3-transport').forEach(el => el.textContent = toThaiNumerals(data.transportTotal) || '-');
-      document.querySelectorAll('.doc3-other').forEach(el => el.textContent = toThaiNumerals(data.otherTotal) || '-');
-      document.querySelectorAll('.doc3-total').forEach(el => el.textContent = toThaiNumerals(data.grandTotal) || '-');
-      document.querySelectorAll('.doc3-totalWords').forEach(el => el.textContent = data.grandTotalWords || '-');
-
-      const doc3DateStr = buildDateString_TH(data.formDate, data.formMonth, data.formYear);
-      document.querySelectorAll('.doc3-date').forEach(el => el.textContent = toThaiNumerals(doc3DateStr) || '-');
-    }
-
-    function syncApprovalToDocument2() {
-      // ดึงข้อมูลผู้ตรวจสอบ
-      const verifierName = document.getElementById('verifierName').value || '';
-      const verifierPosition = document.getElementById('verifierPosition').value || '';
-      const verifyDate_day = document.getElementById('verifyDate_day').value || '';
-      const verifyDate_month = document.getElementById('verifyDate_month').value || '';
-      const verifyDate_year = document.getElementById('verifyDate_year').value || '';
-      const verifyDate = buildDateString_TH(verifyDate_day, verifyDate_month, verifyDate_year);
-
-      // ดึงข้อมูลผู้พิจารณา (จากส่วน Decision)
-      const decisionMakerName = document.getElementById('decisionMakerName').value || '';
-      const decisionMakerPosition = document.getElementById('decisionMakerPosition').value || '';
-      const decisionDate_day = document.getElementById('decisionDate_day').value || '';
-      const decisionDate_month = document.getElementById('decisionDate_month').value || '';
-      const decisionDate_year = document.getElementById('decisionDate_year').value || '';
-      const decisionDate = buildDateString_TH(decisionDate_day, decisionDate_month, decisionDate_year);
-
-      // ดึงข้อมูลผู้อนุมัติหลัก
-      const approverName = document.getElementById('approverName').value || '';
-      const approverPosition = document.getElementById('approverPosition').value || '';
-      const approvalDate_day = document.getElementById('approvalDate_day').value || '';
-      const approvalDate_month = document.getElementById('approvalDate_month').value || '';
-      const approvalDate_year = document.getElementById('approvalDate_year').value || '';
-      const approvalDate = buildDateString_TH(approvalDate_day, approvalDate_month, approvalDate_year);
-
-      const decision = document.querySelector('input[name="approvalDecision"]:checked')?.value;
-      const notes = document.getElementById('approvalNotes').value || '';
-
-      // 1. เชื่อมโยงไปยัง Document 2 ส่วนการพิจารณา (ฝั่งซ้ายบน)
-      const decisionMakerNameDisplayField = document.querySelector('#document2-page .decision-maker-name-display');
-      const decisionMakerPositionField = document.querySelector('#document2-page .decision-maker-position');
-      const decisionMakerDateField = document.querySelector('#document2-page .decision-maker-date');
-
-      if (decisionMakerNameDisplayField) decisionMakerNameDisplayField.textContent = decisionMakerName;
-      if (decisionMakerPositionField) decisionMakerPositionField.textContent = decisionMakerPosition;
-      // เพิ่มแปลงเลขไทยตรงนี้
-      if (decisionMakerDateField) decisionMakerDateField.textContent = toThaiNumerals(decisionDate);
-
-      // 2. เชื่อมโยงไปยัง Document 2 ส่วนที่ตรวจสอบ / ผู้จ่ายเงิน (ฝั่งขวาล่าง)
-      const verifierNameDisplayField = document.querySelector('#document2-page .verify-name-display');
-      const verifierPositionField = document.querySelector('#document2-page .verify-position');
-      const verifierDateField = document.querySelector('#document2-page .verify-date');
-
-      if (verifierNameDisplayField) verifierNameDisplayField.textContent = verifierName;
-      if (verifierPositionField) verifierPositionField.textContent = verifierPosition;
-      // เพิ่มแปลงเลขไทยตรงนี้
-      if (verifierDateField) verifierDateField.textContent = toThaiNumerals(verifyDate);
-
-      // 3. เชื่อมโยงไปยัง Document 2 ส่วนที่อนุมัติ (ฝั่งขวาบน)
-      const approverNameDisplays = document.querySelectorAll('#document2-page .approver-name');
-      const approverPositionField = document.querySelector('#document2-page .approver-position');
-      const approverDateField = document.querySelector('#document2-page .approver-date');
-      const doc2Decision = document.getElementById('doc2-decision');
-      const doc2Notes = document.querySelector('#document2-page .doc2-notes');
-
-      if (approverNameDisplays.length > 1) {
-        approverNameDisplays[1].textContent = approverName;
-      } else if (approverNameDisplays.length === 1) {
-        approverNameDisplays[0].textContent = approverName;
-      }
-
-      if (approverPositionField) approverPositionField.textContent = approverPosition;
-      // เพิ่มแปลงเลขไทยตรงนี้
-      if (approverDateField) approverDateField.textContent = toThaiNumerals(approvalDate);
-
-      // จัดการข้อความผลการพิจารณา
-      if (doc2Decision) {
-        if (decision === 'approved') {
-          doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">เห็นควรอนุมัติให้เบิกจ่ายได้</span>`;
-        } else if (decision === 'rejected') {
-          // แปลงหมายเหตุเป็นเลขไทยด้วยเผื่อพิมพ์ตัวเลขลงไป
-          doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">ไม่เห็นควรอนุมัติเนื่องจาก ${toThaiNumerals(notes)}</span>`;
-        } else if (decision === 'pending') {
-          doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">ส่งกลับแก้ไข / เพิ่มเติมเอกสาร</span>`;
+        if (parseInt(satang) > 0) {
+          result += readNumber(satang) + 'สตางค์';
         } else {
-          doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">เห็นควรอนุมัติให้เบิกจ่ายได้</span>`;
+          result += 'ถ้วน';
+        }
+
+        return result;
+      }
+
+      // อัปเดตฟังก์ชันคำนวณเงินให้เรียกใช้ฟังก์ชันภาษาไทยอัตโนมัติ
+      function calculateGrandTotal() {
+        const mealTotal = parseFloat(document.getElementById('mealTotal').value) || 0;
+        const lodgingTotal = parseFloat(document.getElementById('lodgingTotal').value) || 0;
+        const transportTotal = parseFloat(document.getElementById('transportTotal').value) || 0;
+        const otherTotal = parseFloat(document.getElementById('otherTotal').value) || 0;
+        const grandTotal = mealTotal + lodgingTotal + transportTotal + otherTotal;
+
+        // ใส่ตัวเลข
+        document.getElementById('grandTotal').value = grandTotal;
+        document.getElementById('doc-grandTotal').textContent = grandTotal || '-';
+
+        // ใส่ตัวหนังสือภาษาไทย
+        if (grandTotal > 0) {
+          const thaiText = ThaiNumberToText(grandTotal);
+          document.getElementById('grandTotalWords').value = thaiText;
+          document.getElementById('doc-grandTotalWords').textContent = thaiText;
+
+          // อัปเดตในเอกสารส่วนที่ 2 ด้วย
+          const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
+          if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = thaiText;
+        } else {
+          document.getElementById('grandTotalWords').value = '';
+          document.getElementById('doc-grandTotalWords').textContent = '-';
+
+          const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
+          if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = '-';
+        }
+      }
+      // ฟังก์ชันคำนวณ: ช่อง 1 (อัตรา) x ช่อง 2 (จำนวนวัน) = ช่อง 3 (รวมเงิน)
+      function calculateRowTotals() {
+        // 1. เบี้ยเลี้ยง
+        const mealRate = parseFloat(document.getElementById('mealAllowance').value) || 0;
+        const mealDays = parseFloat(document.getElementById('mealDays').value) || 0;
+        const mealTotal = mealRate * mealDays;
+        document.getElementById('mealTotal').value = mealTotal > 0 ? mealTotal : '';
+
+        // 2. ที่พัก
+        const lodgingRate = parseFloat(document.getElementById('lodgingType').value) || 0;
+        const lodgingDays = parseFloat(document.getElementById('lodgingDays').value) || 0;
+        const lodgingTotal = lodgingRate * lodgingDays;
+        document.getElementById('lodgingTotal').value = lodgingTotal > 0 ? lodgingTotal : '';
+
+        // เรียกฟังก์ชันรวมเงินทั้งสิ้นอัตโนมัติ
+        calculateGrandTotal();
+      }
+
+      // ----------------------------------------------------
+      // ลบคำสั่งดักจับเหตุการณ์ (Event Listeners) ตัวเก่าที่คอยจับ input ช่องต่างๆ ทิ้ง
+      // และใช้โค้ดชุดใหม่นี้แทนครับ:
+      // ----------------------------------------------------
+
+      // ดักจับช่อง เบี้ยเลี้ยง และ ที่พัก (ให้คูณกันอัตโนมัติ)
+      const calcInputs = ['mealAllowance', 'mealDays', 'lodgingType', 'lodgingDays'];
+      calcInputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', calculateRowTotals);
+        }
+      });
+
+      // ดักจับช่อง ค่าพาหนะ และ ค่าใช้จ่ายอื่นๆ (ช่องรวมเงินกรอกเอง)
+      ['transportTotal', 'otherTotal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('input', calculateGrandTotal);
+        }
+      });
+
+      function buildDateString_TH(day, month, year) {
+        if (!day || !month || !year) return '';
+        return `${day} ${month} ${year}`;
+      }
+
+      function getFormData() {
+        const startType = document.querySelector('input[name="startType"]:checked')?.value || '';
+        const endType = document.querySelector('input[name="endType"]:checked')?.value || '';
+
+        return {
+          id: new Date().getTime().toString(),
+          loanNumber: document.getElementById('loanNumber').value,
+          loanDate: document.getElementById('loanDate').value,
+          loanMonth: document.getElementById('loanMonth').value,
+          loanYear: document.getElementById('loanYear').value,
+          borrowerName: document.getElementById('borrowerName').value,
+          borrowerAmount: document.getElementById('borrowerAmount').value,
+          office: document.getElementById('office').value,
+          formDate: document.getElementById('formDate').value,
+          formMonth: document.getElementById('formMonth').value,
+          formYear: document.getElementById('formYear').value,
+          commandNumber: document.getElementById('commandNumber').value,
+          commandDate: document.getElementById('commandDate').value,
+          commandMonth: document.getElementById('commandMonth').value,
+          commandYear: document.getElementById('commandYear').value,
+          fullName: document.getElementById('fullName').value,
+          position: document.getElementById('position').value,
+          department: document.getElementById('department').value,
+          companions: document.getElementById('companions').value,
+          travelPurpose: document.getElementById('travelPurpose').value,
+          startDepartureType: startType,
+          startDate: document.getElementById('startDate').value,
+          startMonth: document.getElementById('startMonth').value,
+          startYear: document.getElementById('startYear').value,
+          startTime: document.getElementById('startTime').value,
+          endDepartureType: endType,
+          endDate: document.getElementById('endDate').value,
+          endMonth: document.getElementById('endMonth').value,
+          endYear: document.getElementById('endYear').value,
+          endTime: document.getElementById('endTime').value,
+          totalDays: document.getElementById('totalDays').value,
+          totalHours: document.getElementById('totalHours').value,
+          mealAllowance: document.getElementById('mealAllowance').value,
+          mealDays: document.getElementById('mealDays').value,
+          mealTotal: document.getElementById('mealTotal').value,
+          lodgingType: document.getElementById('lodgingType').value,
+          lodgingDays: document.getElementById('lodgingDays').value,
+          lodgingTotal: document.getElementById('lodgingTotal').value,
+          transport: document.getElementById('transport').value,
+          transportTotal: document.getElementById('transportTotal').value,
+          otherExpense: document.getElementById('otherExpense').value,
+          otherTotal: document.getElementById('otherTotal').value,
+          grandTotal: document.getElementById('grandTotal').value,
+          grandTotalWords: document.getElementById('grandTotalWords').value,
+          evidenceCount: document.getElementById('evidenceCount').value,
+          signatureName: document.getElementById('signatureName').value,
+          signaturePosition: document.getElementById('signaturePosition').value
+        };
+      }
+
+      // 2. ฟังก์ชันอัปเดตเอกสาร (ที่หุ้มด้วย toThaiNumerals แล้วทั้งหมด)
+      // 2. ฟังก์ชันอัปเดตเอกสาร (ที่หุ้มด้วย toThaiNumerals แล้วทั้งหมด)
+      function updateDocumentFromData(data) {
+        // อัปเดตเอกสารส่วนที่ 1
+        document.getElementById('doc-loanNumber').textContent = toThaiNumerals(data.loanNumber) || '-';
+        // วันที่สัญญาเงินยืมและคำสั่ง
+        document.getElementById('doc-loanDate').textContent = toThaiNumerals(buildDateString_TH(data.loanDate, data.loanMonth, data.loanYear)) || '-';
+        document.getElementById('doc-commandDate').textContent = toThaiNumerals(buildDateString_TH(data.commandDate, data.commandMonth, data.commandYear)) || '-';
+
+        // วันที่ที่ทำการ (มุมขวาบน)
+        document.getElementById('doc-formDate_day').textContent = toThaiNumerals(data.formDate) || '-';
+        document.getElementById('doc-formDate_month').textContent = data.formMonth || '-'; // เดือนเป็นข้อความอยู่แล้ว ไม่ต้องแปลง
+        document.getElementById('doc-formDate_year').textContent = toThaiNumerals(data.formYear) || '-';
+
+        document.getElementById('doc-borrowerName').textContent = toThaiNumerals(data.borrowerName) || '-';
+        document.getElementById('doc-borrowerAmount').textContent = toThaiNumerals(data.borrowerAmount) || '-';
+        document.getElementById('doc-office').textContent = toThaiNumerals(data.office) || '-';
+        document.getElementById('doc-commandNumber').textContent = toThaiNumerals(data.commandNumber) || '-';
+        document.getElementById('doc-fullName').textContent = toThaiNumerals(data.fullName) || '-';
+        document.getElementById('doc-position').textContent = toThaiNumerals(data.position) || '-';
+        document.getElementById('doc-department').textContent = toThaiNumerals(data.department) || '-';
+        document.getElementById('doc-companions').textContent = toThaiNumerals(data.companions) || '-';
+        document.getElementById('doc-travelPurpose').textContent = toThaiNumerals(data.travelPurpose) || '-';
+
+        // อัปเดตวงกลมเลือก ออกเดินทาง/กลับถึง
+        document.getElementById('doc-start-home').textContent = data.startDepartureType === 'บ้านพัก' ? '◉' : '◯';
+        document.getElementById('doc-start-office').textContent = data.startDepartureType === 'สำนักงาน' ? '◉' : '◯';
+        document.getElementById('doc-end-home').textContent = data.endDepartureType === 'บ้านพัก' ? '◉' : '◯';
+        document.getElementById('doc-end-office').textContent = data.endDepartureType === 'สำนักงาน' ? '◉' : '◯';
+
+        document.getElementById('doc-startDate').textContent = toThaiNumerals(data.startDate) || '-';
+        document.getElementById('doc-startMonth').textContent = data.startMonth || '-';
+        document.getElementById('doc-startYear').textContent = toThaiNumerals(data.startYear) || '-';
+        document.getElementById('doc-startTime').textContent = toThaiNumerals(data.startTime) || '-';
+        document.getElementById('doc-endDate').textContent = toThaiNumerals(data.endDate) || '-';
+        document.getElementById('doc-endMonth').textContent = data.endMonth || '-';
+        document.getElementById('doc-endYear').textContent = toThaiNumerals(data.endYear) || '-';
+        document.getElementById('doc-endTime').textContent = toThaiNumerals(data.endTime) || '-';
+
+        document.getElementById('doc-totalDays').textContent = toThaiNumerals(data.totalDays) || '-';
+        document.getElementById('doc-totalHours').textContent = toThaiNumerals(data.totalHours) || '-';
+
+        document.getElementById('doc-mealAllowance').textContent = toThaiNumerals(data.mealAllowance) || '-';
+        document.getElementById('doc-mealDays').textContent = toThaiNumerals(data.mealDays) || '-';
+        document.getElementById('doc-mealTotal').textContent = toThaiNumerals(data.mealTotal) || '-';
+
+        document.getElementById('doc-lodgingType').textContent = toThaiNumerals(data.lodgingType) || '-';
+        document.getElementById('doc-lodgingDays').textContent = toThaiNumerals(data.lodgingDays) || '-';
+        document.getElementById('doc-lodgingTotal').textContent = toThaiNumerals(data.lodgingTotal) || '-';
+
+        document.getElementById('doc-transport').textContent = toThaiNumerals(data.transport) || '-';
+        document.getElementById('doc-transportTotal').textContent = toThaiNumerals(data.transportTotal) || '-';
+
+        document.getElementById('doc-otherExpense').textContent = toThaiNumerals(data.otherExpense) || '-';
+        document.getElementById('doc-otherTotal').textContent = toThaiNumerals(data.otherTotal) || '-';
+
+        document.getElementById('doc-grandTotal').textContent = toThaiNumerals(data.grandTotal) || '-';
+        document.getElementById('doc-grandTotalWords').textContent = data.grandTotalWords || '-'; // ยอดเงินภาษาไทย ไม่ต้องแปลง
+        document.getElementById('doc-evidenceCount').textContent = toThaiNumerals(data.evidenceCount) || '-';
+
+        document.getElementById('doc-signatureName').textContent = toThaiNumerals(data.signatureName) || '-';
+        document.getElementById('doc-signaturePosition').textContent = toThaiNumerals(data.signaturePosition) || '-';
+
+        // Sync ไปที่ Document 2 (ส่วนที่ 2)
+        const doc2LoanNum = document.querySelector('#document2-page .doc2-loanNumber');
+        const doc2LoanDate = document.querySelector('#document2-page .doc2-loanDate');
+        const doc2GrandTotal = document.querySelector('#document2-page .doc2-grandTotal');
+        const doc2GrandTotalWords = document.querySelector('#document2-page .doc2-grandTotalWords');
+        const doc2PayeeName = document.querySelector('#document2-page .payee-receiver-name');
+        const doc2PayeePos = document.querySelector('#document2-page .payee-receiver-pos');
+        const doc2PayeeDate = document.querySelector('#document2-page .payee-receiver-date');
+
+        if (doc2LoanNum) doc2LoanNum.textContent = toThaiNumerals(data.loanNumber) || '-';
+        if (doc2LoanDate) doc2LoanDate.textContent = toThaiNumerals(buildDateString_TH(data.loanDate, data.loanMonth, data.loanYear)) || '-';
+        if (doc2GrandTotal) doc2GrandTotal.textContent = toThaiNumerals(data.grandTotal) || '-';
+        if (doc2GrandTotalWords) doc2GrandTotalWords.textContent = data.grandTotalWords || '-';
+        if (doc2PayeeName) doc2PayeeName.textContent = toThaiNumerals(data.fullName) || '-';
+        if (doc2PayeePos) doc2PayeePos.textContent = toThaiNumerals(data.position) || '-';
+        if (doc2PayeeDate) doc2PayeeDate.textContent = toThaiNumerals(buildDateString_TH(data.formDate, data.formMonth, data.formYear)) || '-';
+
+        // Sync ไปที่ Document 3 (ส่วนที่ 3 แนวนอน)
+        document.querySelectorAll('.doc3-fullName').forEach(el => el.textContent = toThaiNumerals(data.fullName) || '-');
+        document.querySelectorAll('.doc3-position').forEach(el => el.textContent = toThaiNumerals(data.position) || '-');
+        document.querySelectorAll('.doc3-meal').forEach(el => el.textContent = toThaiNumerals(data.mealTotal) || '-');
+        document.querySelectorAll('.doc3-lodging').forEach(el => el.textContent = toThaiNumerals(data.lodgingTotal) || '-');
+        document.querySelectorAll('.doc3-transport').forEach(el => el.textContent = toThaiNumerals(data.transportTotal) || '-');
+        document.querySelectorAll('.doc3-other').forEach(el => el.textContent = toThaiNumerals(data.otherTotal) || '-');
+        document.querySelectorAll('.doc3-total').forEach(el => el.textContent = toThaiNumerals(data.grandTotal) || '-');
+        document.querySelectorAll('.doc3-totalWords').forEach(el => el.textContent = data.grandTotalWords || '-');
+
+        const doc3DateStr = buildDateString_TH(data.formDate, data.formMonth, data.formYear);
+        document.querySelectorAll('.doc3-date').forEach(el => el.textContent = toThaiNumerals(doc3DateStr) || '-');
+      }
+
+      function syncApprovalToDocument2() {
+        // ดึงข้อมูลผู้ตรวจสอบ
+        const verifierName = document.getElementById('verifierName').value || '';
+        const verifierPosition = document.getElementById('verifierPosition').value || '';
+        const verifyDate_day = document.getElementById('verifyDate_day').value || '';
+        const verifyDate_month = document.getElementById('verifyDate_month').value || '';
+        const verifyDate_year = document.getElementById('verifyDate_year').value || '';
+        const verifyDate = buildDateString_TH(verifyDate_day, verifyDate_month, verifyDate_year);
+
+        // ดึงข้อมูลผู้พิจารณา (จากส่วน Decision)
+        const decisionMakerName = document.getElementById('decisionMakerName').value || '';
+        const decisionMakerPosition = document.getElementById('decisionMakerPosition').value || '';
+        const decisionDate_day = document.getElementById('decisionDate_day').value || '';
+        const decisionDate_month = document.getElementById('decisionDate_month').value || '';
+        const decisionDate_year = document.getElementById('decisionDate_year').value || '';
+        const decisionDate = buildDateString_TH(decisionDate_day, decisionDate_month, decisionDate_year);
+
+        // ดึงข้อมูลผู้อนุมัติหลัก
+        const approverName = document.getElementById('approverName').value || '';
+        const approverPosition = document.getElementById('approverPosition').value || '';
+        const approvalDate_day = document.getElementById('approvalDate_day').value || '';
+        const approvalDate_month = document.getElementById('approvalDate_month').value || '';
+        const approvalDate_year = document.getElementById('approvalDate_year').value || '';
+        const approvalDate = buildDateString_TH(approvalDate_day, approvalDate_month, approvalDate_year);
+
+        const decision = document.querySelector('input[name="approvalDecision"]:checked')?.value;
+        const notes = document.getElementById('approvalNotes').value || '';
+
+        // 1. เชื่อมโยงไปยัง Document 2 ส่วนการพิจารณา (ฝั่งซ้ายบน)
+        const decisionMakerNameDisplayField = document.querySelector('#document2-page .decision-maker-name-display');
+        const decisionMakerPositionField = document.querySelector('#document2-page .decision-maker-position');
+        const decisionMakerDateField = document.querySelector('#document2-page .decision-maker-date');
+
+        if (decisionMakerNameDisplayField) decisionMakerNameDisplayField.textContent = decisionMakerName;
+        if (decisionMakerPositionField) decisionMakerPositionField.textContent = decisionMakerPosition;
+        // เพิ่มแปลงเลขไทยตรงนี้
+        if (decisionMakerDateField) decisionMakerDateField.textContent = toThaiNumerals(decisionDate);
+
+        // 2. เชื่อมโยงไปยัง Document 2 ส่วนที่ตรวจสอบ / ผู้จ่ายเงิน (ฝั่งขวาล่าง)
+        const verifierNameDisplayField = document.querySelector('#document2-page .verify-name-display');
+        const verifierPositionField = document.querySelector('#document2-page .verify-position');
+        const verifierDateField = document.querySelector('#document2-page .verify-date');
+
+        if (verifierNameDisplayField) verifierNameDisplayField.textContent = verifierName;
+        if (verifierPositionField) verifierPositionField.textContent = verifierPosition;
+        // เพิ่มแปลงเลขไทยตรงนี้
+        if (verifierDateField) verifierDateField.textContent = toThaiNumerals(verifyDate);
+
+        // 3. เชื่อมโยงไปยัง Document 2 ส่วนที่อนุมัติ (ฝั่งขวาบน)
+        const approverNameDisplays = document.querySelectorAll('#document2-page .approver-name');
+        const approverPositionField = document.querySelector('#document2-page .approver-position');
+        const approverDateField = document.querySelector('#document2-page .approver-date');
+        const doc2Decision = document.getElementById('doc2-decision');
+        const doc2Notes = document.querySelector('#document2-page .doc2-notes');
+
+        if (approverNameDisplays.length > 1) {
+          approverNameDisplays[1].textContent = approverName;
+        } else if (approverNameDisplays.length === 1) {
+          approverNameDisplays[0].textContent = approverName;
+        }
+
+        if (approverPositionField) approverPositionField.textContent = approverPosition;
+        // เพิ่มแปลงเลขไทยตรงนี้
+        if (approverDateField) approverDateField.textContent = toThaiNumerals(approvalDate);
+
+        // จัดการข้อความผลการพิจารณา
+        if (doc2Decision) {
+          if (decision === 'approved') {
+            doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">เห็นควรอนุมัติให้เบิกจ่ายได้</span>`;
+          } else if (decision === 'rejected') {
+            // แปลงหมายเหตุเป็นเลขไทยด้วยเผื่อพิมพ์ตัวเลขลงไป
+            doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">ไม่เห็นควรอนุมัติเนื่องจาก ${toThaiNumerals(notes)}</span>`;
+          } else if (decision === 'pending') {
+            doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">ส่งกลับแก้ไข / เพิ่มเติมเอกสาร</span>`;
+          } else {
+            doc2Decision.innerHTML = `<span contenteditable="true" class="editable-field">เห็นควรอนุมัติให้เบิกจ่ายได้</span>`;
+          }
+        }
+
+        if (doc2Notes && notes) {
+          doc2Notes.textContent = toThaiNumerals(notes);
         }
       }
 
-      if (doc2Notes && notes) {
-        doc2Notes.textContent = toThaiNumerals(notes);
+      function loadApprovalForm() {
+        if (allRecords.length > 0) {
+          const data = allRecords[0];
+          document.getElementById('approvalRequesterName').value = data.fullName || '';
+          document.getElementById('approvalRequesterPosition').value = data.position || '';
+          document.getElementById('approvalAmount').value = data.grandTotal || '';
+          const startDate = `${data.startDate}/${data.startMonth}/${data.startYear}`;
+          const endDate = `${data.endDate}/${data.endMonth}/${data.endYear}`;
+          document.getElementById('approvalTravelPeriod').value = `${startDate} - ${endDate}`;
+        }
       }
-    }
 
-    function loadApprovalForm() {
-      if (allRecords.length > 0) {
-        const data = allRecords[0];
-        document.getElementById('approvalRequesterName').value = data.fullName || '';
-        document.getElementById('approvalRequesterPosition').value = data.position || '';
-        document.getElementById('approvalAmount').value = data.grandTotal || '';
-        const startDate = `${data.startDate}/${data.startMonth}/${data.startYear}`;
-        const endDate = `${data.endDate}/${data.endMonth}/${data.endYear}`;
-        document.getElementById('approvalTravelPeriod').value = `${startDate} - ${endDate}`;
-      }
-    }
-
-    function updateTrackingWithApproval() {
-      if (!approvalData) return;
-      let statusText = '';
-      let statusClass = '';
-      if (approvalData.decision === 'approved') {
-        statusText = '✅ อนุมัติแล้ว';
-        statusClass = 'text-green-600';
-      } else if (approvalData.decision === 'rejected') {
-        statusText = '❌ ไม่อนุมัติ';
-        statusClass = 'text-red-600';
-      } else if (approvalData.decision === 'pending') {
-        statusText = '⏳ รอการแก้ไข';
-        statusClass = 'text-orange-600';
-      }
-      const statusElement = document.getElementById('current-status');
-      if (statusElement) {
-        statusElement.textContent = statusText;
-        statusElement.className = `text-2xl font-bold ${statusClass}`;
-      }
-      const timelineContainer = document.getElementById('timeline-container');
-      if (timelineContainer) {
-        timelineContainer.innerHTML = '';
-        const timeline = [
-          {
-            icon: '📝',
-            title: 'บันทึกข้อมูล',
-            desc: allRecords.length > 0 ? '✅ เสร็จเรียบร้อย' : 'รอการกรอกฟอร์ม',
-            active: allRecords.length > 0
-          },
-          {
-            icon: '✅',
-            title: 'การอนุมัติ',
-            desc: `ผู้อนุมัติ: ${approvalData.approverName}`,
-            active: true
-          },
-          {
-            icon: '📄',
-            title: 'เสร็จสิ้น',
-            desc: approvalData.decision === 'approved' ? '✅ ได้รับอนุมัติ' : 'รอการแก้ไข',
-            active: approvalData.decision === 'approved'
-          }
-        ];
-        timeline.forEach(item => {
-          const timelineItem = document.createElement('div');
-          timelineItem.className = `timeline-item ${item.active ? 'active' : ''}`;
-          timelineItem.innerHTML = `
+      function updateTrackingWithApproval() {
+        if (!approvalData) return;
+        let statusText = '';
+        let statusClass = '';
+        if (approvalData.decision === 'approved') {
+          statusText = '✅ อนุมัติแล้ว';
+          statusClass = 'text-green-600';
+        } else if (approvalData.decision === 'rejected') {
+          statusText = '❌ ไม่อนุมัติ';
+          statusClass = 'text-red-600';
+        } else if (approvalData.decision === 'pending') {
+          statusText = '⏳ รอการแก้ไข';
+          statusClass = 'text-orange-600';
+        }
+        const statusElement = document.getElementById('current-status');
+        if (statusElement) {
+          statusElement.textContent = statusText;
+          statusElement.className = `text-2xl font-bold ${statusClass}`;
+        }
+        const timelineContainer = document.getElementById('timeline-container');
+        if (timelineContainer) {
+          timelineContainer.innerHTML = '';
+          const timeline = [
+            {
+              icon: '📝',
+              title: 'บันทึกข้อมูล',
+              desc: allRecords.length > 0 ? '✅ เสร็จเรียบร้อย' : 'รอการกรอกฟอร์ม',
+              active: allRecords.length > 0
+            },
+            {
+              icon: '✅',
+              title: 'การอนุมัติ',
+              desc: `ผู้อนุมัติ: ${approvalData.approverName}`,
+              active: true
+            },
+            {
+              icon: '📄',
+              title: 'เสร็จสิ้น',
+              desc: approvalData.decision === 'approved' ? '✅ ได้รับอนุมัติ' : 'รอการแก้ไข',
+              active: approvalData.decision === 'approved'
+            }
+          ];
+          timeline.forEach(item => {
+            const timelineItem = document.createElement('div');
+            timelineItem.className = `timeline-item ${item.active ? 'active' : ''}`;
+            timelineItem.innerHTML = `
 <div class="timeline-dot"></div>
 <div>
 <p class="font-semibold text-gray-800">${item.icon} ${item.title}</p>
 <p class="text-sm text-gray-600">${item.desc}</p>
 </div>
 `;
-          timelineContainer.appendChild(timelineItem);
-        });
-      }
-      const historyContainer = document.getElementById('history-container');
-      if (historyContainer) {
-        const card = document.createElement('div');
-        card.className = 'history-card';
-        let statusBadgeClass = 'status-pending';
-        let statusBadgeText = 'รอการแก้ไข';
-        if (approvalData.decision === 'approved') {
-          statusBadgeClass = 'status-approved';
-          statusBadgeText = 'อนุมัติแล้ว';
-        } else if (approvalData.decision === 'rejected') {
-          statusBadgeClass = 'status-rejected';
-          statusBadgeText = 'ไม่อนุมัติ';
+            timelineContainer.appendChild(timelineItem);
+          });
         }
-        card.innerHTML = `
+        const historyContainer = document.getElementById('history-container');
+        if (historyContainer) {
+          const card = document.createElement('div');
+          card.className = 'history-card';
+          let statusBadgeClass = 'status-pending';
+          let statusBadgeText = 'รอการแก้ไข';
+          if (approvalData.decision === 'approved') {
+            statusBadgeClass = 'status-approved';
+            statusBadgeText = 'อนุมัติแล้ว';
+          } else if (approvalData.decision === 'rejected') {
+            statusBadgeClass = 'status-rejected';
+            statusBadgeText = 'ไม่อนุมัติ';
+          }
+          card.innerHTML = `
 <div class="flex justify-between items-start mb-3">
 <div>
 <p class="font-semibold text-gray-800">การอนุมัติ</p>
@@ -2751,465 +2819,465 @@
 <p colspan="2"><span class="font-medium">หมายเหตุ:</span> ${approvalData.notes || '-'}</p>
 </div>
 `;
-        const firstCard = historyContainer.querySelector('.history-card');
-        if (firstCard) {
-          historyContainer.insertBefore(card, firstCard);
-        } else {
-          historyContainer.innerHTML = '';
-          historyContainer.appendChild(card);
+          const firstCard = historyContainer.querySelector('.history-card');
+          if (firstCard) {
+            historyContainer.insertBefore(card, firstCard);
+          } else {
+            historyContainer.innerHTML = '';
+            historyContainer.appendChild(card);
+          }
         }
       }
-    }
 
-    function updateTrackingStatus() {
-      if (allRecords.length === 0) {
-        document.getElementById('current-status').textContent = 'รอการบันทึก';
-        document.getElementById('current-status').className = 'text-2xl font-bold text-gray-400';
-        document.getElementById('total-amount').textContent = '0 บาท';
-        document.getElementById('requester-name').textContent = '-';
-        return;
-      }
+      function updateTrackingStatus() {
+        if (allRecords.length === 0) {
+          document.getElementById('current-status').textContent = 'รอการบันทึก';
+          document.getElementById('current-status').className = 'text-2xl font-bold text-gray-400';
+          document.getElementById('total-amount').textContent = '0 บาท';
+          document.getElementById('requester-name').textContent = '-';
+          return;
+        }
 
-      const data = allRecords[0];
-      const grandTotal = parseFloat(data.grandTotal) || 0;
-      document.getElementById('total-amount').textContent = grandTotal.toLocaleString() + ' บาท';
-      document.getElementById('requester-name').textContent = data.fullName || '-';
+        const data = allRecords[0];
+        const grandTotal = parseFloat(data.grandTotal) || 0;
+        document.getElementById('total-amount').textContent = grandTotal.toLocaleString() + ' บาท';
+        document.getElementById('requester-name').textContent = data.fullName || '-';
 
-      if (approvalData) {
-        updateTrackingWithApproval();
-      } else {
-        let status = 'บันทึกข้อมูลแล้ว';
-        let statusClass = 'text-yellow-600';
+        if (approvalData) {
+          updateTrackingWithApproval();
+        } else {
+          let status = 'บันทึกข้อมูลแล้ว';
+          let statusClass = 'text-yellow-600';
 
-        document.getElementById('current-status').textContent = status;
-        document.getElementById('current-status').className = `text-2xl font-bold ${statusClass}`;
+          document.getElementById('current-status').textContent = status;
+          document.getElementById('current-status').className = `text-2xl font-bold ${statusClass}`;
 
-        const timelineContainer = document.getElementById('timeline-container');
-        timelineContainer.innerHTML = '';
-        const timeline = [
-          {
-            icon: '📝',
-            title: 'บันทึกข้อมูล',
-            desc: '✅ เสร็จเรียบร้อย',
-            active: true
-          },
-          {
-            icon: '✅',
-            title: 'รอการอนุมัติ',
-            desc: 'ระบบรอการลงนามจากผู้อนุมัติ',
-            active: false
-          },
-          {
-            icon: '📄',
-            title: 'เสร็จสิ้น',
-            desc: 'กระบวนการเสร็จสิ้น',
-            active: false
-          }
-        ];
-        timeline.forEach(item => {
-          const timelineItem = document.createElement('div');
-          timelineItem.className = `timeline-item ${item.active ? 'active' : ''}`;
-          timelineItem.innerHTML = `
+          const timelineContainer = document.getElementById('timeline-container');
+          timelineContainer.innerHTML = '';
+          const timeline = [
+            {
+              icon: '📝',
+              title: 'บันทึกข้อมูล',
+              desc: '✅ เสร็จเรียบร้อย',
+              active: true
+            },
+            {
+              icon: '✅',
+              title: 'รอการอนุมัติ',
+              desc: 'ระบบรอการลงนามจากผู้อนุมัติ',
+              active: false
+            },
+            {
+              icon: '📄',
+              title: 'เสร็จสิ้น',
+              desc: 'กระบวนการเสร็จสิ้น',
+              active: false
+            }
+          ];
+          timeline.forEach(item => {
+            const timelineItem = document.createElement('div');
+            timelineItem.className = `timeline-item ${item.active ? 'active' : ''}`;
+            timelineItem.innerHTML = `
 <div class="timeline-dot"></div>
 <div>
 <p class="font-semibold text-gray-800">${item.icon} ${item.title}</p>
 <p class="text-sm text-gray-600">${item.desc}</p>
 </div>
 `;
-          timelineContainer.appendChild(timelineItem);
-        });
+            timelineContainer.appendChild(timelineItem);
+          });
+        }
       }
-    }
 
-    function showSaveMessage(message, type) {
-      const messageEl = document.getElementById('save-message');
-      messageEl.textContent = message;
-      messageEl.className = `p-3 rounded text-center font-semibold ${type === 'green' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
-      messageEl.classList.remove('hidden');
-      setTimeout(() => {
-        messageEl.classList.add('hidden');
-      }, 3000);
-    }
+      function showSaveMessage(message, type) {
+        const messageEl = document.getElementById('save-message');
+        messageEl.textContent = message;
+        messageEl.className = `p-3 rounded text-center font-semibold ${type === 'green' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+        messageEl.classList.remove('hidden');
+        setTimeout(() => {
+          messageEl.classList.add('hidden');
+        }, 3000);
+      }
 
-    function showApprovalMessage(message, type) {
-      const messageEl = document.getElementById('approval-message');
-      messageEl.textContent = message;
-      messageEl.className = `p-3 rounded text-center font-semibold ${type === 'green' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
-      messageEl.classList.remove('hidden');
-      setTimeout(() => {
-        messageEl.classList.add('hidden');
-      }, 3000);
-    }
+      function showApprovalMessage(message, type) {
+        const messageEl = document.getElementById('approval-message');
+        messageEl.textContent = message;
+        messageEl.className = `p-3 rounded text-center font-semibold ${type === 'green' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+        messageEl.classList.remove('hidden');
+        setTimeout(() => {
+          messageEl.classList.add('hidden');
+        }, 3000);
+      }
 
-    function clearForm() {
-      document.getElementById('expense-form').reset();
-      document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
-      document.getElementById('totalDays').value = '';
-      document.getElementById('totalHours').value = '';
-      document.getElementById('grandTotal').value = '';
-      document.getElementById('position').value = '';
-      showSaveMessage('✨ ล้างฟอร์มแล้ว', 'green');
-    }
+      function clearForm() {
+        document.getElementById('expense-form').reset();
+        document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+        document.getElementById('totalDays').value = '';
+        document.getElementById('totalHours').value = '';
+        document.getElementById('grandTotal').value = '';
+        document.getElementById('position').value = '';
+        showSaveMessage('✨ ล้างฟอร์มแล้ว', 'green');
+      }
 
-    function clearApprovalForm() {
-      document.getElementById('approval-form').reset();
-      document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
-      document.getElementById('approverPosition').value = '';
-      showApprovalMessage('✨ ล้างแบบฟอร์มแล้ว', 'green');
-    }
+      function clearApprovalForm() {
+        document.getElementById('approval-form').reset();
+        document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+        document.getElementById('approverPosition').value = '';
+        showApprovalMessage('✨ ล้างแบบฟอร์มแล้ว', 'green');
+      }
 
-    async function saveFormData() {
-      const formData = getFormData();
-      if (allRecords.length > 0) {
-        const recordToUpdate = { ...allRecords[0], ...formData };
-        allRecords[0] = recordToUpdate;
-        saveToLocalStorage(); // บันทึกลง localStorage
-        if (window.dataSdk) {
-          const updateResult = await window.dataSdk.update(recordToUpdate);
-          if (updateResult.isOk) {
-            showSaveMessage('✅ บันทึกข้อมูลสำเร็จ!', 'green');
+      async function saveFormData() {
+        const formData = getFormData();
+        if (allRecords.length > 0) {
+          const recordToUpdate = { ...allRecords[0], ...formData };
+          allRecords[0] = recordToUpdate;
+          saveToLocalStorage(); // บันทึกลง localStorage
+          if (window.dataSdk) {
+            const updateResult = await window.dataSdk.update(recordToUpdate);
+            if (updateResult.isOk) {
+              showSaveMessage('✅ บันทึกข้อมูลสำเร็จ!', 'green');
+            } else {
+              showSaveMessage('❌ เกิดข้อผิดพลาด: ' + updateResult.error.message, 'red');
+            }
           } else {
-            showSaveMessage('❌ เกิดข้อผิดพลาด: ' + updateResult.error.message, 'red');
+            showSaveMessage('✅ บันทึกข้อมูลสำเร็จ! (บันทึกในเครื่องเท่านั้น)', 'green');
           }
         } else {
-          showSaveMessage('✅ บันทึกข้อมูลสำเร็จ! (บันทึกในเครื่องเท่านั้น)', 'green');
-        }
-      } else {
-        allRecords.push(formData);
-        saveToLocalStorage(); // บันทึกลง localStorage
-        if (window.dataSdk) {
-          const createResult = await window.dataSdk.create(formData);
-          if (createResult.isOk) {
-            showSaveMessage('✅ บันทึกข้อมูลสำเร็จ!', 'green');
-            await loadData();
+          allRecords.push(formData);
+          saveToLocalStorage(); // บันทึกลง localStorage
+          if (window.dataSdk) {
+            const createResult = await window.dataSdk.create(formData);
+            if (createResult.isOk) {
+              showSaveMessage('✅ บันทึกข้อมูลสำเร็จ!', 'green');
+              await loadData();
+            } else {
+              showSaveMessage('❌ เกิดข้อผิดพลาด: ' + createResult.error.message, 'red');
+            }
           } else {
-            showSaveMessage('❌ เกิดข้อผิดพลาด: ' + createResult.error.message, 'red');
+            showSaveMessage('✅ บันทึกข้อมูลสำเร็จ! (บันทึกในเครื่องเท่านั้น)', 'green');
           }
-        } else {
-          showSaveMessage('✅ บันทึกข้อมูลสำเร็จ! (บันทึกในเครื่องเท่านั้น)', 'green');
-        }
-      }
-    }
-
-    async function loadData() {
-      // โหลดข้อมูลจาก localStorage ก่อน
-      loadFromLocalStorage();
-
-      if (window.dataSdk) {
-        const result = await window.dataSdk.read();
-        if (result.isOk) {
-          allRecords = result.data;
-          saveToLocalStorage(); // บันทึกข้อมูลที่ดึงมาลง localStorage
         }
       }
 
-      if (allRecords.length > 0) {
-        const data = allRecords[0];
-        document.getElementById('loanNumber').value = data.loanNumber || '';
-        document.getElementById('loanDate').value = data.loanDate || '';
-        if (document.getElementById('loanMonth')) document.getElementById('loanMonth').value = data.loanMonth || '';
-        if (document.getElementById('loanYear')) document.getElementById('loanYear').value = data.loanYear || '';
-        document.getElementById('borrowerName').value = data.borrowerName || '';
-        document.getElementById('borrowerAmount').value = data.borrowerAmount || '';
-        document.getElementById('office').value = data.office || '';
-        document.getElementById('formDate').value = data.formDate || '';
-        if (document.getElementById('formMonth')) document.getElementById('formMonth').value = data.formMonth || '';
-        if (document.getElementById('formYear')) document.getElementById('formYear').value = data.formYear || '';
-        document.getElementById('commandNumber').value = data.commandNumber || '';
-        document.getElementById('commandDate').value = data.commandDate || '';
-        if (document.getElementById('commandMonth')) document.getElementById('commandMonth').value = data.commandMonth || '';
-        if (document.getElementById('commandYear')) document.getElementById('commandYear').value = data.commandYear || '';
-        document.getElementById('fullName').value = data.fullName || '';
-        document.getElementById('position').value = data.position || '';
-        document.getElementById('department').value = data.department || '';
-        document.getElementById('companions').value = data.companions || '';
-        document.getElementById('travelPurpose').value = data.travelPurpose || '';
-        if (data.startDepartureType) {
-          const startRadio = document.querySelector(`input[name="startType"][value="${data.startDepartureType}"]`);
-          if (startRadio) startRadio.checked = true;
-        }
-        if (data.endDepartureType) {
-          const endRadio = document.querySelector(`input[name="endType"][value="${data.endDepartureType}"]`);
-          if (endRadio) endRadio.checked = true;
-        }
-        document.getElementById('startDate').value = data.startDate || '';
-        document.getElementById('startMonth').value = data.startMonth || '';
-        document.getElementById('startYear').value = data.startYear || '';
-        document.getElementById('startTime').value = data.startTime || '';
-        document.getElementById('endDate').value = data.endDate || '';
-        document.getElementById('endMonth').value = data.endMonth || '';
-        document.getElementById('endYear').value = data.endYear || '';
-        document.getElementById('endTime').value = data.endTime || '';
-        document.getElementById('totalDays').value = data.totalDays || '';
-        document.getElementById('totalHours').value = data.totalHours || '';
-        document.getElementById('mealAllowance').value = data.mealAllowance || '';
-        document.getElementById('mealDays').value = data.mealDays || '';
-        document.getElementById('mealTotal').value = data.mealTotal || '';
-        document.getElementById('lodgingType').value = data.lodgingType || '';
-        document.getElementById('lodgingDays').value = data.lodgingDays || '';
-        document.getElementById('lodgingTotal').value = data.lodgingTotal || '';
-        document.getElementById('transport').value = data.transport || '';
-        document.getElementById('transportTotal').value = data.transportTotal || '';
-        document.getElementById('otherExpense').value = data.otherExpense || '';
-        document.getElementById('otherTotal').value = data.otherTotal || '';
-        document.getElementById('grandTotal').value = data.grandTotal || '';
-        document.getElementById('grandTotalWords').value = data.grandTotalWords || '';
-        document.getElementById('evidenceCount').value = data.evidenceCount || '';
-        document.getElementById('signatureName').value = data.signatureName || '';
-        document.getElementById('signaturePosition').value = data.signaturePosition || '';
-        updateDocumentFromData(data);
-      }
-    }
+      async function loadData() {
+        // โหลดข้อมูลจาก localStorage ก่อน
+        loadFromLocalStorage();
 
-    document.getElementById('expense-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      saveFormData();
-      updateDocumentFromData(getFormData());
-      showPage('document');
-    });
-
-    document.getElementById('approval-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const decision = document.querySelector('input[name="approvalDecision"]:checked')?.value;
-      if (!decision) {
-        showApprovalMessage('❌ กรุณาเลือกการตัดสินใจ', 'red');
-        return;
-      }
-      if (!document.getElementById('approverName').value) {
-        showApprovalMessage('❌ กรุณาเลือกชื่อผู้อนุมัติ', 'red');
-        return;
-      }
-      if (!document.getElementById('approverPosition').value) {
-        showApprovalMessage('❌ กรุณาเลือกตำแหน่งผู้อนุมัติ', 'red');
-        return;
-      }
-      approvalData = {
-        approverName: document.getElementById('approverName').value,
-        approverPosition: document.getElementById('approverPosition').value,
-        decision: decision,
-        notes: document.getElementById('approvalNotes').value,
-        timestamp: new Date().toLocaleString('th-TH')
-      };
-      saveToLocalStorage(); // บันทึกข้อมูลการอนุมัติลง localStorage
-      syncApprovalToDocument2();
-      showApprovalMessage(`✅ บันทึกการอนุมัติสำเร็จ! (${decision === 'approved' ? 'อนุมัติ' : decision === 'rejected' ? 'ไม่อนุมัติ' : 'รอการแก้ไข'})`, 'green');
-      updateTrackingWithApproval();
-      showPage('document2');
-    });
-
-    document.getElementById('verifierName').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('verifierPosition').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('verifyDate_day').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('verifyDate_month').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('verifyDate_year').addEventListener('change', syncApprovalToDocument2);
-
-    document.getElementById('decisionMakerName').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('decisionMakerPosition').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('decisionDate_day').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('decisionDate_month').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('decisionDate_year').addEventListener('change', syncApprovalToDocument2);
-
-    document.getElementById('approverName').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('approverPosition').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('approvalDate_day').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('approvalDate_month').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('approvalDate_year').addEventListener('change', syncApprovalToDocument2);
-    document.getElementById('approvalNotes').addEventListener('input', syncApprovalToDocument2);
-    document.getElementsByName('approvalDecision').forEach(radio => {
-      radio.addEventListener('change', syncApprovalToDocument2);
-    });
-
-    document.getElementById('startDate').addEventListener('change', calculateTravelTime);
-    document.getElementById('startMonth').addEventListener('change', calculateTravelTime);
-    document.getElementById('startYear').addEventListener('change', calculateTravelTime);
-    document.getElementById('startTime').addEventListener('change', calculateTravelTime);
-    document.getElementById('endDate').addEventListener('change', calculateTravelTime);
-    document.getElementById('endMonth').addEventListener('change', calculateTravelTime);
-    document.getElementById('endYear').addEventListener('change', calculateTravelTime);
-    document.getElementById('endTime').addEventListener('change', calculateTravelTime);
-
-    document.getElementById('mealTotal').addEventListener('change', calculateGrandTotal);
-    document.getElementById('mealTotal').addEventListener('input', calculateGrandTotal);
-    document.getElementById('lodgingTotal').addEventListener('change', calculateGrandTotal);
-    document.getElementById('lodgingTotal').addEventListener('input', calculateGrandTotal);
-    document.getElementById('transportTotal').addEventListener('change', calculateGrandTotal);
-    document.getElementById('transportTotal').addEventListener('input', calculateGrandTotal);
-    document.getElementById('otherTotal').addEventListener('change', calculateGrandTotal);
-    document.getElementById('otherTotal').addEventListener('input', calculateGrandTotal);
-
-    document.getElementById('expense-form').addEventListener('change', () => {
-      updateDocumentFromData(getFormData());
-    });
-
-    document.getElementById('expense-form').addEventListener('input', () => {
-      updateDocumentFromData(getFormData());
-    });
-
-    // บันทึกข้อมูลอัตโนมัติเมื่อมีการเปลี่ยนแปลง
-    document.getElementById('expense-form').addEventListener('change', () => {
-      saveToLocalStorage();
-    });
-
-    document.getElementById('expense-form').addEventListener('input', () => {
-      saveToLocalStorage();
-    });
-
-    // บันทึกข้อมูลการอนุมัติอัตโนมัติเมื่อมีการเปลี่ยนแปลง
-    document.getElementById('approval-form').addEventListener('change', () => {
-      if (approvalData) {
-        saveToLocalStorage();
-      }
-    });
-
-    document.getElementById('approval-form').addEventListener('input', () => {
-      if (approvalData) {
-        saveToLocalStorage();
-      }
-    });
-
-    async function init() {
-      // 1. สร้างตัวเลือก วัน/เดือน/ปี
-      initializeDateSelectors();
-
-      // 2. ล้างข้อมูลที่ถูกบันทึกค้างไว้ในระบบและ LocalStorage ทั้งหมด
-      clearAllData();
-
-      // 3. ล้างค่าในฟอร์มกรอกและฟอร์มอนุมัติให้เป็นค่าว่าง (แบบไม่แจ้งเตือน Popup)
-      document.getElementById('expense-form').reset();
-      document.getElementById('approval-form').reset();
-
-      // หมายเหตุ: ปิดการเรียกใช้ await loadData() เพื่อไม่ให้ดึงข้อมูลเก่ากลับมาใส่ฟอร์ม
-
-      // 4. รีเซ็ตหน้าเอกสารส่วนที่ 1 และ 2 ให้เป็นค่าว่างตามฟอร์ม
-      updateDocumentFromData(getFormData());
-
-      // 5. โหลด Element SDK สำหรับตั้งค่าหัวกระดาษ (ถ้ามี)
-      if (window.elementSdk) {
-        window.elementSdk.init({
-          defaultConfig,
-          onConfigChange: async (config) => {
-            document.getElementById('document-title').textContent = config.document_title || defaultConfig.document_title;
-          },
-          mapToCapabilities: (config) => ({
-            recolorables: [],
-            borderables: [],
-            fontEditable: undefined,
-            fontSizeable: undefined
-          }),
-          mapToEditPanelValues: (config) => new Map([
-            ['document_title', config.document_title || defaultConfig.document_title]
-          ])
-        });
-      }
-    }
-    // 1. ฟังก์ชันเสริมสำหรับแปลงเลขอารบิก เป็นเลขไทย
-    function toThaiNumerals(text) {
-      if (text === null || text === undefined || text === '') return text;
-      const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
-      // ค้นหาตัวเลข 0-9 ทุกตัวในข้อความ แล้วแทนที่ด้วยเลขไทย
-      return text.toString().replace(/\d/g, (match) => thaiNumbers[match]);
-    }
-    // ==========================================
-    // ระบบแปลงเลขไทยอัตโนมัติเมื่อคลิกออกนอกช่อง (ครอบคลุมทั้งหน้าเอกสาร)
-    // ==========================================
-    document.addEventListener('focusout', (e) => {
-      // เช็คว่าช่องที่เพิ่งคลิกออก เป็นช่องที่แก้ไขได้ (contenteditable) หรือไม่
-      if (e.target.hasAttribute('contenteditable')) {
-
-        // กรณีที่ 1: เป็นช่องกรอกตัวเลขในตารางค่าใช้จ่าย (คำนวณยอด + ใส่ลูกน้ำ + เลขไทย)
-        if (e.target.classList.contains('expense-input')) {
-          const text = e.target.textContent.trim();
-          if (text !== '') {
-            const number = parseNumber(text);
-            e.target.textContent = number === 0 ? '' : formatNumber(number);
+        if (window.dataSdk) {
+          const result = await window.dataSdk.read();
+          if (result.isOk) {
+            allRecords = result.data;
+            saveToLocalStorage(); // บันทึกข้อมูลที่ดึงมาลง localStorage
           }
-          calculateTotals();
         }
-        // กรณีที่ 2: เป็นช่องข้อความอื่นๆ ทั่วไปทั้งหน้า (แปลงอารบิก 0-9 เป็น ๐-๙ อย่างเดียว)
-        else {
-          const originalText = e.target.textContent;
-          if (originalText) {
-            const thaiText = arabicToThai(originalText);
-            // ถ้ามีเลขอารบิกปนอยู่ ให้เปลี่ยนเป็นเลขไทย
-            if (originalText !== thaiText) {
-              e.target.textContent = thaiText;
+
+        if (allRecords.length > 0) {
+          const data = allRecords[0];
+          document.getElementById('loanNumber').value = data.loanNumber || '';
+          document.getElementById('loanDate').value = data.loanDate || '';
+          if (document.getElementById('loanMonth')) document.getElementById('loanMonth').value = data.loanMonth || '';
+          if (document.getElementById('loanYear')) document.getElementById('loanYear').value = data.loanYear || '';
+          document.getElementById('borrowerName').value = data.borrowerName || '';
+          document.getElementById('borrowerAmount').value = data.borrowerAmount || '';
+          document.getElementById('office').value = data.office || '';
+          document.getElementById('formDate').value = data.formDate || '';
+          if (document.getElementById('formMonth')) document.getElementById('formMonth').value = data.formMonth || '';
+          if (document.getElementById('formYear')) document.getElementById('formYear').value = data.formYear || '';
+          document.getElementById('commandNumber').value = data.commandNumber || '';
+          document.getElementById('commandDate').value = data.commandDate || '';
+          if (document.getElementById('commandMonth')) document.getElementById('commandMonth').value = data.commandMonth || '';
+          if (document.getElementById('commandYear')) document.getElementById('commandYear').value = data.commandYear || '';
+          document.getElementById('fullName').value = data.fullName || '';
+          document.getElementById('position').value = data.position || '';
+          document.getElementById('department').value = data.department || '';
+          document.getElementById('companions').value = data.companions || '';
+          document.getElementById('travelPurpose').value = data.travelPurpose || '';
+          if (data.startDepartureType) {
+            const startRadio = document.querySelector(`input[name="startType"][value="${data.startDepartureType}"]`);
+            if (startRadio) startRadio.checked = true;
+          }
+          if (data.endDepartureType) {
+            const endRadio = document.querySelector(`input[name="endType"][value="${data.endDepartureType}"]`);
+            if (endRadio) endRadio.checked = true;
+          }
+          document.getElementById('startDate').value = data.startDate || '';
+          document.getElementById('startMonth').value = data.startMonth || '';
+          document.getElementById('startYear').value = data.startYear || '';
+          document.getElementById('startTime').value = data.startTime || '';
+          document.getElementById('endDate').value = data.endDate || '';
+          document.getElementById('endMonth').value = data.endMonth || '';
+          document.getElementById('endYear').value = data.endYear || '';
+          document.getElementById('endTime').value = data.endTime || '';
+          document.getElementById('totalDays').value = data.totalDays || '';
+          document.getElementById('totalHours').value = data.totalHours || '';
+          document.getElementById('mealAllowance').value = data.mealAllowance || '';
+          document.getElementById('mealDays').value = data.mealDays || '';
+          document.getElementById('mealTotal').value = data.mealTotal || '';
+          document.getElementById('lodgingType').value = data.lodgingType || '';
+          document.getElementById('lodgingDays').value = data.lodgingDays || '';
+          document.getElementById('lodgingTotal').value = data.lodgingTotal || '';
+          document.getElementById('transport').value = data.transport || '';
+          document.getElementById('transportTotal').value = data.transportTotal || '';
+          document.getElementById('otherExpense').value = data.otherExpense || '';
+          document.getElementById('otherTotal').value = data.otherTotal || '';
+          document.getElementById('grandTotal').value = data.grandTotal || '';
+          document.getElementById('grandTotalWords').value = data.grandTotalWords || '';
+          document.getElementById('evidenceCount').value = data.evidenceCount || '';
+          document.getElementById('signatureName').value = data.signatureName || '';
+          document.getElementById('signaturePosition').value = data.signaturePosition || '';
+          updateDocumentFromData(data);
+        }
+      }
+
+      document.getElementById('expense-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        saveFormData();
+        updateDocumentFromData(getFormData());
+        showPage('document');
+      });
+
+      document.getElementById('approval-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const decision = document.querySelector('input[name="approvalDecision"]:checked')?.value;
+        if (!decision) {
+          showApprovalMessage('❌ กรุณาเลือกการตัดสินใจ', 'red');
+          return;
+        }
+        if (!document.getElementById('approverName').value) {
+          showApprovalMessage('❌ กรุณาเลือกชื่อผู้อนุมัติ', 'red');
+          return;
+        }
+        if (!document.getElementById('approverPosition').value) {
+          showApprovalMessage('❌ กรุณาเลือกตำแหน่งผู้อนุมัติ', 'red');
+          return;
+        }
+        approvalData = {
+          approverName: document.getElementById('approverName').value,
+          approverPosition: document.getElementById('approverPosition').value,
+          decision: decision,
+          notes: document.getElementById('approvalNotes').value,
+          timestamp: new Date().toLocaleString('th-TH')
+        };
+        saveToLocalStorage(); // บันทึกข้อมูลการอนุมัติลง localStorage
+        syncApprovalToDocument2();
+        showApprovalMessage(`✅ บันทึกการอนุมัติสำเร็จ! (${decision === 'approved' ? 'อนุมัติ' : decision === 'rejected' ? 'ไม่อนุมัติ' : 'รอการแก้ไข'})`, 'green');
+        updateTrackingWithApproval();
+        showPage('document2');
+      });
+
+      document.getElementById('verifierName').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('verifierPosition').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('verifyDate_day').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('verifyDate_month').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('verifyDate_year').addEventListener('change', syncApprovalToDocument2);
+
+      document.getElementById('decisionMakerName').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('decisionMakerPosition').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('decisionDate_day').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('decisionDate_month').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('decisionDate_year').addEventListener('change', syncApprovalToDocument2);
+
+      document.getElementById('approverName').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('approverPosition').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('approvalDate_day').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('approvalDate_month').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('approvalDate_year').addEventListener('change', syncApprovalToDocument2);
+      document.getElementById('approvalNotes').addEventListener('input', syncApprovalToDocument2);
+      document.getElementsByName('approvalDecision').forEach(radio => {
+        radio.addEventListener('change', syncApprovalToDocument2);
+      });
+
+      document.getElementById('startDate').addEventListener('change', calculateTravelTime);
+      document.getElementById('startMonth').addEventListener('change', calculateTravelTime);
+      document.getElementById('startYear').addEventListener('change', calculateTravelTime);
+      document.getElementById('startTime').addEventListener('change', calculateTravelTime);
+      document.getElementById('endDate').addEventListener('change', calculateTravelTime);
+      document.getElementById('endMonth').addEventListener('change', calculateTravelTime);
+      document.getElementById('endYear').addEventListener('change', calculateTravelTime);
+      document.getElementById('endTime').addEventListener('change', calculateTravelTime);
+
+      document.getElementById('mealTotal').addEventListener('change', calculateGrandTotal);
+      document.getElementById('mealTotal').addEventListener('input', calculateGrandTotal);
+      document.getElementById('lodgingTotal').addEventListener('change', calculateGrandTotal);
+      document.getElementById('lodgingTotal').addEventListener('input', calculateGrandTotal);
+      document.getElementById('transportTotal').addEventListener('change', calculateGrandTotal);
+      document.getElementById('transportTotal').addEventListener('input', calculateGrandTotal);
+      document.getElementById('otherTotal').addEventListener('change', calculateGrandTotal);
+      document.getElementById('otherTotal').addEventListener('input', calculateGrandTotal);
+
+      document.getElementById('expense-form').addEventListener('change', () => {
+        updateDocumentFromData(getFormData());
+      });
+
+      document.getElementById('expense-form').addEventListener('input', () => {
+        updateDocumentFromData(getFormData());
+      });
+
+      // บันทึกข้อมูลอัตโนมัติเมื่อมีการเปลี่ยนแปลง
+      document.getElementById('expense-form').addEventListener('change', () => {
+        saveToLocalStorage();
+      });
+
+      document.getElementById('expense-form').addEventListener('input', () => {
+        saveToLocalStorage();
+      });
+
+      // บันทึกข้อมูลการอนุมัติอัตโนมัติเมื่อมีการเปลี่ยนแปลง
+      document.getElementById('approval-form').addEventListener('change', () => {
+        if (approvalData) {
+          saveToLocalStorage();
+        }
+      });
+
+      document.getElementById('approval-form').addEventListener('input', () => {
+        if (approvalData) {
+          saveToLocalStorage();
+        }
+      });
+
+      async function init() {
+        // 1. สร้างตัวเลือก วัน/เดือน/ปี
+        initializeDateSelectors();
+
+        // 2. ล้างข้อมูลที่ถูกบันทึกค้างไว้ในระบบและ LocalStorage ทั้งหมด
+        clearAllData();
+
+        // 3. ล้างค่าในฟอร์มกรอกและฟอร์มอนุมัติให้เป็นค่าว่าง (แบบไม่แจ้งเตือน Popup)
+        document.getElementById('expense-form').reset();
+        document.getElementById('approval-form').reset();
+
+        // หมายเหตุ: ปิดการเรียกใช้ await loadData() เพื่อไม่ให้ดึงข้อมูลเก่ากลับมาใส่ฟอร์ม
+
+        // 4. รีเซ็ตหน้าเอกสารส่วนที่ 1 และ 2 ให้เป็นค่าว่างตามฟอร์ม
+        updateDocumentFromData(getFormData());
+
+        // 5. โหลด Element SDK สำหรับตั้งค่าหัวกระดาษ (ถ้ามี)
+        if (window.elementSdk) {
+          window.elementSdk.init({
+            defaultConfig,
+            onConfigChange: async (config) => {
+              document.getElementById('document-title').textContent = config.document_title || defaultConfig.document_title;
+            },
+            mapToCapabilities: (config) => ({
+              recolorables: [],
+              borderables: [],
+              fontEditable: undefined,
+              fontSizeable: undefined
+            }),
+            mapToEditPanelValues: (config) => new Map([
+              ['document_title', config.document_title || defaultConfig.document_title]
+            ])
+          });
+        }
+      }
+      // 1. ฟังก์ชันเสริมสำหรับแปลงเลขอารบิก เป็นเลขไทย
+      function toThaiNumerals(text) {
+        if (text === null || text === undefined || text === '') return text;
+        const thaiNumbers = ['๐', '๑', '๒', '๓', '๔', '๕', '๖', '๗', '๘', '๙'];
+        // ค้นหาตัวเลข 0-9 ทุกตัวในข้อความ แล้วแทนที่ด้วยเลขไทย
+        return text.toString().replace(/\d/g, (match) => thaiNumbers[match]);
+      }
+      // ==========================================
+      // ระบบแปลงเลขไทยอัตโนมัติเมื่อคลิกออกนอกช่อง (ครอบคลุมทั้งหน้าเอกสาร)
+      // ==========================================
+      document.addEventListener('focusout', (e) => {
+        // เช็คว่าช่องที่เพิ่งคลิกออก เป็นช่องที่แก้ไขได้ (contenteditable) หรือไม่
+        if (e.target.hasAttribute('contenteditable')) {
+
+          // กรณีที่ 1: เป็นช่องกรอกตัวเลขในตารางค่าใช้จ่าย (คำนวณยอด + ใส่ลูกน้ำ + เลขไทย)
+          if (e.target.classList.contains('expense-input')) {
+            const text = e.target.textContent.trim();
+            if (text !== '') {
+              const number = parseNumber(text);
+              e.target.textContent = number === 0 ? '' : formatNumber(number);
+            }
+            calculateTotals();
+          }
+          // กรณีที่ 2: เป็นช่องข้อความอื่นๆ ทั่วไปทั้งหน้า (แปลงอารบิก 0-9 เป็น ๐-๙ อย่างเดียว)
+          else {
+            const originalText = e.target.textContent;
+            if (originalText) {
+              const thaiText = arabicToThai(originalText);
+              // ถ้ามีเลขอารบิกปนอยู่ ให้เปลี่ยนเป็นเลขไทย
+              if (originalText !== thaiText) {
+                e.target.textContent = thaiText;
+              }
             }
           }
         }
+      });
+      // ฟังก์ชันดาวน์โหลด PDF (ฉบับแก้ปัญหาหน้าว่าง + แก้ค่าเพี้ยน)
+      function downloadPDF(pageId, filename) {
+        const originalElement = document.querySelector(`#${pageId} .print-container`);
+
+        // 1. สร้าง Container ชั่วคราว 
+        // เปลี่ยนจากโยนออกนอกจอ เป็นการซ่อนไว้ข้างหลังสุด (z-index: -1) ให้ยังอยู่ใน Viewport
+        const tempContainer = document.createElement('div');
+        tempContainer.style.position = 'fixed';
+        tempContainer.style.top = '0';
+        tempContainer.style.left = '0';
+        tempContainer.style.width = '210mm'; // บังคับกว้าง A4
+        tempContainer.style.zIndex = '-1';   // ซ่อนไว้หลังสุด ผู้ใช้จะมองไม่เห็น
+        tempContainer.style.backgroundColor = 'white';
+
+        // 2. Clone เนื้อหามาใส่
+        const clone = originalElement.cloneNode(true);
+
+        // ลบ class หรือ style ที่มีผลต่อหน้าจอแสดงผลออก
+        clone.classList.remove('mx-auto', 'shadow-sm', 'max-w-4xl');
+        clone.style.margin = '0';
+        clone.style.boxShadow = 'none';
+        clone.style.transform = 'none';
+
+        tempContainer.appendChild(clone);
+        document.body.appendChild(tempContainer);
+
+        // เลื่อนหน้าจอไปบนสุด
+        window.scrollTo(0, 0);
+
+        const opt = {
+          margin: 0,
+          filename: filename,
+          image: { type: 'jpeg', quality: 1 },
+          html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0,
+            scrollX: 0,
+            windowWidth: 794 // ความกว้างจำลองของ A4
+          },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        const btn = event.currentTarget;
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '⏳ กำลังสร้างไฟล์...';
+        btn.disabled = true;
+
+        // 3. ใช้ setTimeout หน่วงเวลา 150ms ให้เบราว์เซอร์ Render ตัวโคลนให้เสร็จก่อนแคปเจอร์ภาพ
+        setTimeout(() => {
+          html2pdf().set(opt).from(tempContainer).save().then(() => {
+            // เมื่อสร้างเสร็จ ลบ Container ชั่วคราวทิ้ง
+            document.body.removeChild(tempContainer);
+
+            // คืนค่าปุ่ม
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          }).catch(err => {
+            console.error('เกิดข้อผิดพลาดในการสร้าง PDF:', err);
+            document.body.removeChild(tempContainer);
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+          });
+        }, 150);
       }
-    });
-    // ฟังก์ชันดาวน์โหลด PDF (ฉบับแก้ปัญหาหน้าว่าง + แก้ค่าเพี้ยน)
-    function downloadPDF(pageId, filename) {
-      const originalElement = document.querySelector(`#${pageId} .print-container`);
 
-      // 1. สร้าง Container ชั่วคราว 
-      // เปลี่ยนจากโยนออกนอกจอ เป็นการซ่อนไว้ข้างหลังสุด (z-index: -1) ให้ยังอยู่ใน Viewport
-      const tempContainer = document.createElement('div');
-      tempContainer.style.position = 'fixed';
-      tempContainer.style.top = '0';
-      tempContainer.style.left = '0';
-      tempContainer.style.width = '210mm'; // บังคับกว้าง A4
-      tempContainer.style.zIndex = '-1';   // ซ่อนไว้หลังสุด ผู้ใช้จะมองไม่เห็น
-      tempContainer.style.backgroundColor = 'white';
+      // ฟังก์ชันดาวน์โหลด Word (DOC)
+      function downloadWord(pageId, filename) {
+        const element = document.querySelector(`#${pageId} .print-container`);
 
-      // 2. Clone เนื้อหามาใส่
-      const clone = originalElement.cloneNode(true);
-
-      // ลบ class หรือ style ที่มีผลต่อหน้าจอแสดงผลออก
-      clone.classList.remove('mx-auto', 'shadow-sm', 'max-w-4xl');
-      clone.style.margin = '0';
-      clone.style.boxShadow = 'none';
-      clone.style.transform = 'none';
-
-      tempContainer.appendChild(clone);
-      document.body.appendChild(tempContainer);
-
-      // เลื่อนหน้าจอไปบนสุด
-      window.scrollTo(0, 0);
-
-      const opt = {
-        margin: 0,
-        filename: filename,
-        image: { type: 'jpeg', quality: 1 },
-        html2canvas: {
-          scale: 2,
-          useCORS: true,
-          scrollY: 0,
-          scrollX: 0,
-          windowWidth: 794 // ความกว้างจำลองของ A4
-        },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      const btn = event.currentTarget;
-      const originalText = btn.innerHTML;
-      btn.innerHTML = '⏳ กำลังสร้างไฟล์...';
-      btn.disabled = true;
-
-      // 3. ใช้ setTimeout หน่วงเวลา 150ms ให้เบราว์เซอร์ Render ตัวโคลนให้เสร็จก่อนแคปเจอร์ภาพ
-      setTimeout(() => {
-        html2pdf().set(opt).from(tempContainer).save().then(() => {
-          // เมื่อสร้างเสร็จ ลบ Container ชั่วคราวทิ้ง
-          document.body.removeChild(tempContainer);
-
-          // คืนค่าปุ่ม
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        }).catch(err => {
-          console.error('เกิดข้อผิดพลาดในการสร้าง PDF:', err);
-          document.body.removeChild(tempContainer);
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        });
-      }, 150);
-    }
-
-    // ฟังก์ชันดาวน์โหลด Word (DOC)
-    function downloadWord(pageId, filename) {
-      const element = document.querySelector(`#${pageId} .print-container`);
-
-      // สร้างหัว HTML สำหรับไฟล์ Word (บังคับฟอนต์และรองรับภาษาไทย)
-      const preHtml = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        // สร้างหัว HTML สำหรับไฟล์ Word (บังคับฟอนต์และรองรับภาษาไทย)
+        const preHtml = `<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <head><meta charset='utf-8'><title>Export HTML To Doc</title>
     <style>
       body { font-family: 'TH Sarabun PSK', 'Sarabun', sans-serif; }
@@ -3217,201 +3285,201 @@
       td, th { border: 1px solid black; padding: 5px; }
     </style>
     </head><body>`;
-      const postHtml = "</body></html>";
+        const postHtml = "</body></html>";
 
-      // นำเนื้อหาเอกสารมาต่อกัน
-      const html = preHtml + element.innerHTML + postHtml;
+        // นำเนื้อหาเอกสารมาต่อกัน
+        const html = preHtml + element.innerHTML + postHtml;
 
-      // สร้าง Blob สำหรับดาวน์โหลด
-      const blob = new Blob(['\ufeff', html], {
-        type: 'application/msword'
-      });
+        // สร้าง Blob สำหรับดาวน์โหลด
+        const blob = new Blob(['\ufeff', html], {
+          type: 'application/msword'
+        });
 
-      // จำลองการคลิกลิงก์เพื่อดาวน์โหลด
-      const downloadLink = document.createElement("a");
-      document.body.appendChild(downloadLink);
+        // จำลองการคลิกลิงก์เพื่อดาวน์โหลด
+        const downloadLink = document.createElement("a");
+        document.body.appendChild(downloadLink);
 
-      if (navigator.msSaveOrOpenBlob) {
-        navigator.msSaveOrOpenBlob(blob, filename);
-      } else {
-        downloadLink.href = URL.createObjectURL(blob);
-        downloadLink.download = filename;
-        downloadLink.click();
-      }
-      document.body.removeChild(downloadLink);
-    }
-
-    // เพิ่ม Event Listener เพื่อดักจับการกด Ctrl+P สำหรับการพิมพ์
-    document.addEventListener('keydown', function (event) {
-      // ตรวจสอบว่ามีการกด Ctrl+P (หรือ Cmd+P บน Mac)
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'p') {
-        const doc1Page = document.getElementById('document-page');
-        const doc2Page = document.getElementById('document2-page');
-
-        // ถ้าหน้าเอกสารส่วนที่ 1 แสดงอยู่ ให้สั่งพิมพ์ส่วนที่ 1
-        if (doc1Page && !doc1Page.classList.contains('hidden')) {
-          event.preventDefault(); // ป้องกันการทำงานปริ้นท์ปกติของเบราว์เซอร์
-          printDocument('document-page', 'portrait');
+        if (navigator.msSaveOrOpenBlob) {
+          navigator.msSaveOrOpenBlob(blob, filename);
+        } else {
+          downloadLink.href = URL.createObjectURL(blob);
+          downloadLink.download = filename;
+          downloadLink.click();
         }
-        // ถ้าหน้าเอกสารส่วนที่ 2 แสดงอยู่ ให้สั่งพิมพ์ส่วนที่ 2
-        else if (doc2Page && !doc2Page.classList.contains('hidden')) {
-          event.preventDefault(); // ป้องกันการทำงานปริ้นท์ปกติของเบราว์เซอร์
-          printDocument('document2-page', 'portrait');
-        }
-      }
-    });
-
-    // ==========================================
-    // ระบบตรวจจับ Ctrl+P และตั้งค่าหน้ากระดาษอัตโนมัติ
-    // ==========================================
-    window.addEventListener('beforeprint', () => {
-      // 1. เช็คว่าเอกสารส่วนที่ 3 (แนวนอน) กำลังแสดงอยู่หรือไม่
-      const doc3Page = document.getElementById('document3-page');
-      // ถ้า doc3Page ไม่มีคลาส 'hidden' แสดงว่ากำลังเปิดหน้านี้อยู่
-      const isDoc3Active = doc3Page && !doc3Page.classList.contains('hidden');
-
-      // 2. สร้างหรือดึง <style> สำหรับคุมหน้ากระดาษ
-      let printStyle = document.getElementById('auto-print-orientation');
-      if (!printStyle) {
-        printStyle = document.createElement('style');
-        printStyle.id = 'auto-print-orientation';
-        document.head.appendChild(printStyle);
+        document.body.removeChild(downloadLink);
       }
 
-      // 3. สั่งเปลี่ยนกระดาษตามหน้าที่เปิดอยู่
-      if (isDoc3Active) {
-        // ถ้าอยู่ส่วนที่ 3 ให้บังคับกระดาษเป็นแนวนอน
-        printStyle.innerHTML = '@page { size: A4 landscape !important; margin: 0 !important; }';
-      } else {
-        // ถ้าอยู่ส่วนที่ 1 หรือ 2 ให้บังคับกระดาษเป็นแนวตั้ง
-        printStyle.innerHTML = '@page { size: A4 portrait !important; margin: 0 !important; }';
-      }
-    });
+      // เพิ่ม Event Listener เพื่อดักจับการกด Ctrl+P สำหรับการพิมพ์
+      document.addEventListener('keydown', function (event) {
+        // ตรวจสอบว่ามีการกด Ctrl+P (หรือ Cmd+P บน Mac)
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'p') {
+          const doc1Page = document.getElementById('document-page');
+          const doc2Page = document.getElementById('document2-page');
 
-    // Function to convert Thai numerals to Arabic numerals
-    function thaiToArabic(thaiNum) {
-      if (!thaiNum) return '';
-      const thaiDigits = [/๐/g, /๑/g, /๒/g, /๓/g, /๔/g, /๕/g, /๖/g, /๗/g, /๘/g, /๙/g];
-      let arabicNum = thaiNum;
-      for (let i = 0; i < 10; i++) {
-        arabicNum = arabicNum.replace(thaiDigits[i], i);
-      }
-      return arabicNum;
-    }
-
-    // Function to convert Arabic numerals to Thai numerals
-    function arabicToThai(arabicNum) {
-      if (!arabicNum) return '';
-      const arabicDigits = [/0/g, /1/g, /2/g, /3/g, /4/g, /5/g, /6/g, /7/g, /8/g, /9/g];
-      const thaiDigits = ["๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙"];
-      let thaiNum = arabicNum;
-      for (let i = 0; i < 10; i++) {
-        thaiNum = thaiNum.replace(arabicDigits[i], thaiDigits[i]);
-      }
-      return thaiNum;
-    }
-
-    // ฟังก์ชันแปลงตัวเลขเป็นข้อความบาท (ภาษาไทย)
-    function getThaiBahtText(amount) {
-      if (amount === 0) return "-";
-      const numberText = ["ศูนย์", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า"];
-      const unitText = ["", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน"];
-      let amountStr = parseFloat(Math.abs(amount)).toFixed(2);
-      let parts = amountStr.split('.');
-
-      let processPart = (str) => {
-        let result = "";
-        let len = str.length;
-        for (let i = 0; i < len; i++) {
-          let digit = parseInt(str.charAt(i));
-          let position = len - i - 1;
-          if (digit !== 0) {
-            if (position === 1 && digit === 1) result += "สิบ";
-            else if (position === 1 && digit === 2) result += "ยี่สิบ";
-            else if (position === 0 && digit === 1 && len > 1 && str.charAt(i - 1) !== '0') result += "เอ็ด";
-            else result += numberText[digit] + unitText[position % 6];
-
-            if (position > 0 && position % 6 === 0) result += "ล้าน";
+          // ถ้าหน้าเอกสารส่วนที่ 1 แสดงอยู่ ให้สั่งพิมพ์ส่วนที่ 1
+          if (doc1Page && !doc1Page.classList.contains('hidden')) {
+            event.preventDefault(); // ป้องกันการทำงานปริ้นท์ปกติของเบราว์เซอร์
+            printDocument('document-page', 'portrait');
+          }
+          // ถ้าหน้าเอกสารส่วนที่ 2 แสดงอยู่ ให้สั่งพิมพ์ส่วนที่ 2
+          else if (doc2Page && !doc2Page.classList.contains('hidden')) {
+            event.preventDefault(); // ป้องกันการทำงานปริ้นท์ปกติของเบราว์เซอร์
+            printDocument('document2-page', 'portrait');
           }
         }
-        return result;
-      };
-
-      let bahtText = processPart(parts[0]) + "บาท";
-      let satangText = parseInt(parts[1]) === 0 ? "ถ้วน" : processPart(parts[1]) + "สตางค์";
-      return bahtText + satangText;
-    }
-
-    function parseNumber(text) {
-      const arabicText = thaiToArabic(text || '').replace(/,/g, '');
-      const number = parseFloat(arabicText);
-      return isNaN(number) ? 0 : number;
-    }
-
-    // ฟังก์ชันจัดรูปแบบตัวเลข (อัปเดต: ไม่บังคับใส่ทศนิยม .00)
-    function formatNumber(number) {
-      if (number === 0) return '';
-
-      // เช็คว่าตัวเลขนี้มีเศษทศนิยมหรือไม่ (ถ้าหาร 1 แล้วเหลือเศษ แปลว่ามีทศนิยม)
-      const hasDecimal = number % 1 !== 0;
-
-      // ถ้ามีเศษทศนิยมให้แสดง 2 ตำแหน่ง (เช่น .50) ถ้าไม่มีเศษให้แสดงเป็นจำนวนเต็ม (0 ตำแหน่ง)
-      const formattedArabic = number.toLocaleString('en-US', {
-        minimumFractionDigits: hasDecimal ? 2 : 0,
-        maximumFractionDigits: 2
       });
 
-      return arabicToThai(formattedArabic);
-    }
+      // ==========================================
+      // ระบบตรวจจับ Ctrl+P และตั้งค่าหน้ากระดาษอัตโนมัติ
+      // ==========================================
+      window.addEventListener('beforeprint', () => {
+        // 1. เช็คว่าเอกสารส่วนที่ 3 (แนวนอน) กำลังแสดงอยู่หรือไม่
+        const doc3Page = document.getElementById('document3-page');
+        // ถ้า doc3Page ไม่มีคลาส 'hidden' แสดงว่ากำลังเปิดหน้านี้อยู่
+        const isDoc3Active = doc3Page && !doc3Page.classList.contains('hidden');
 
-    function calculateTotals() {
-      const expenseRows = document.querySelectorAll('.expense-row');
-      let grandMealTotal = 0;
-      let grandLodgingTotal = 0;
-      let grandTransportTotal = 0;
-      let grandOtherTotal = 0;
-      let grandTotal = 0;
+        // 2. สร้างหรือดึง <style> สำหรับคุมหน้ากระดาษ
+        let printStyle = document.getElementById('auto-print-orientation');
+        if (!printStyle) {
+          printStyle = document.createElement('style');
+          printStyle.id = 'auto-print-orientation';
+          document.head.appendChild(printStyle);
+        }
 
-      expenseRows.forEach(row => {
-        const meal = parseNumber(row.querySelector('.meal-input').textContent);
-        const lodging = parseNumber(row.querySelector('.lodging-input').textContent);
-        const transport = parseNumber(row.querySelector('.transport-input').textContent);
-        const other = parseNumber(row.querySelector('.other-input').textContent);
-
-        const rowTotal = meal + lodging + transport + other;
-        row.querySelector('.row-total').textContent = formatNumber(rowTotal);
-
-        grandMealTotal += meal;
-        grandLodgingTotal += lodging;
-        grandTransportTotal += transport;
-        grandOtherTotal += other;
-        grandTotal += rowTotal;
+        // 3. สั่งเปลี่ยนกระดาษตามหน้าที่เปิดอยู่
+        if (isDoc3Active) {
+          // ถ้าอยู่ส่วนที่ 3 ให้บังคับกระดาษเป็นแนวนอน
+          printStyle.innerHTML = '@page { size: A4 landscape !important; margin: 0 !important; }';
+        } else {
+          // ถ้าอยู่ส่วนที่ 1 หรือ 2 ให้บังคับกระดาษเป็นแนวตั้ง
+          printStyle.innerHTML = '@page { size: A4 portrait !important; margin: 0 !important; }';
+        }
       });
 
-      document.querySelector('.grand-meal-total').textContent = formatNumber(grandMealTotal);
-      document.querySelector('.grand-lodging-total').textContent = formatNumber(grandLodgingTotal);
-      document.querySelector('.grand-transport-total').textContent = formatNumber(grandTransportTotal);
-      document.querySelector('.grand-other-total').textContent = formatNumber(grandOtherTotal);
-      document.querySelector('.grand-total').textContent = formatNumber(grandTotal);
-
-      const totalWordsElement = document.querySelector('.doc3-totalWords');
-      if (totalWordsElement) {
-        // แก้ไขตรงนี้: เรียกใช้ฟังก์ชัน getThaiBahtText เพื่อแปลงตัวเลขยอดรวมเป็นอักษรไทย
-        totalWordsElement.textContent = grandTotal > 0 ? getThaiBahtText(grandTotal) : '-';
+      // Function to convert Thai numerals to Arabic numerals
+      function thaiToArabic(thaiNum) {
+        if (!thaiNum) return '';
+        const thaiDigits = [/๐/g, /๑/g, /๒/g, /๓/g, /๔/g, /๕/g, /๖/g, /๗/g, /๘/g, /๙/g];
+        let arabicNum = thaiNum;
+        for (let i = 0; i < 10; i++) {
+          arabicNum = arabicNum.replace(thaiDigits[i], i);
+        }
+        return arabicNum;
       }
-    }
 
-    document.addEventListener('input', (e) => {
-      if (e.target.classList.contains('expense-input')) {
-        calculateTotals();
+      // Function to convert Arabic numerals to Thai numerals
+      function arabicToThai(arabicNum) {
+        if (!arabicNum) return '';
+        const arabicDigits = [/0/g, /1/g, /2/g, /3/g, /4/g, /5/g, /6/g, /7/g, /8/g, /9/g];
+        const thaiDigits = ["๐", "๑", "๒", "๓", "๔", "๕", "๖", "๗", "๘", "๙"];
+        let thaiNum = arabicNum;
+        for (let i = 0; i < 10; i++) {
+          thaiNum = thaiNum.replace(arabicDigits[i], thaiDigits[i]);
+        }
+        return thaiNum;
       }
-    });
 
-    // Initial calculation
-    window.addEventListener('load', calculateTotals);
+      // ฟังก์ชันแปลงตัวเลขเป็นข้อความบาท (ภาษาไทย)
+      function getThaiBahtText(amount) {
+        if (amount === 0) return "-";
+        const numberText = ["ศูนย์", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า"];
+        const unitText = ["", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน"];
+        let amountStr = parseFloat(Math.abs(amount)).toFixed(2);
+        let parts = amountStr.split('.');
 
-    init();
-  </script>
+        let processPart = (str) => {
+          let result = "";
+          let len = str.length;
+          for (let i = 0; i < len; i++) {
+            let digit = parseInt(str.charAt(i));
+            let position = len - i - 1;
+            if (digit !== 0) {
+              if (position === 1 && digit === 1) result += "สิบ";
+              else if (position === 1 && digit === 2) result += "ยี่สิบ";
+              else if (position === 0 && digit === 1 && len > 1 && str.charAt(i - 1) !== '0') result += "เอ็ด";
+              else result += numberText[digit] + unitText[position % 6];
+
+              if (position > 0 && position % 6 === 0) result += "ล้าน";
+            }
+          }
+          return result;
+        };
+
+        let bahtText = processPart(parts[0]) + "บาท";
+        let satangText = parseInt(parts[1]) === 0 ? "ถ้วน" : processPart(parts[1]) + "สตางค์";
+        return bahtText + satangText;
+      }
+
+      function parseNumber(text) {
+        const arabicText = thaiToArabic(text || '').replace(/,/g, '');
+        const number = parseFloat(arabicText);
+        return isNaN(number) ? 0 : number;
+      }
+
+      // ฟังก์ชันจัดรูปแบบตัวเลข (อัปเดต: ไม่บังคับใส่ทศนิยม .00)
+      function formatNumber(number) {
+        if (number === 0) return '';
+
+        // เช็คว่าตัวเลขนี้มีเศษทศนิยมหรือไม่ (ถ้าหาร 1 แล้วเหลือเศษ แปลว่ามีทศนิยม)
+        const hasDecimal = number % 1 !== 0;
+
+        // ถ้ามีเศษทศนิยมให้แสดง 2 ตำแหน่ง (เช่น .50) ถ้าไม่มีเศษให้แสดงเป็นจำนวนเต็ม (0 ตำแหน่ง)
+        const formattedArabic = number.toLocaleString('en-US', {
+          minimumFractionDigits: hasDecimal ? 2 : 0,
+          maximumFractionDigits: 2
+        });
+
+        return arabicToThai(formattedArabic);
+      }
+
+      function calculateTotals() {
+        const expenseRows = document.querySelectorAll('.expense-row');
+        let grandMealTotal = 0;
+        let grandLodgingTotal = 0;
+        let grandTransportTotal = 0;
+        let grandOtherTotal = 0;
+        let grandTotal = 0;
+
+        expenseRows.forEach(row => {
+          const meal = parseNumber(row.querySelector('.meal-input').textContent);
+          const lodging = parseNumber(row.querySelector('.lodging-input').textContent);
+          const transport = parseNumber(row.querySelector('.transport-input').textContent);
+          const other = parseNumber(row.querySelector('.other-input').textContent);
+
+          const rowTotal = meal + lodging + transport + other;
+          row.querySelector('.row-total').textContent = formatNumber(rowTotal);
+
+          grandMealTotal += meal;
+          grandLodgingTotal += lodging;
+          grandTransportTotal += transport;
+          grandOtherTotal += other;
+          grandTotal += rowTotal;
+        });
+
+        document.querySelector('.grand-meal-total').textContent = formatNumber(grandMealTotal);
+        document.querySelector('.grand-lodging-total').textContent = formatNumber(grandLodgingTotal);
+        document.querySelector('.grand-transport-total').textContent = formatNumber(grandTransportTotal);
+        document.querySelector('.grand-other-total').textContent = formatNumber(grandOtherTotal);
+        document.querySelector('.grand-total').textContent = formatNumber(grandTotal);
+
+        const totalWordsElement = document.querySelector('.doc3-totalWords');
+        if (totalWordsElement) {
+          // แก้ไขตรงนี้: เรียกใช้ฟังก์ชัน getThaiBahtText เพื่อแปลงตัวเลขยอดรวมเป็นอักษรไทย
+          totalWordsElement.textContent = grandTotal > 0 ? getThaiBahtText(grandTotal) : '-';
+        }
+      }
+
+      document.addEventListener('input', (e) => {
+        if (e.target.classList.contains('expense-input')) {
+          calculateTotals();
+        }
+      });
+
+      // Initial calculation
+      window.addEventListener('load', calculateTotals);
+
+      init();
+    </script>
 </body>
 
 </html>
